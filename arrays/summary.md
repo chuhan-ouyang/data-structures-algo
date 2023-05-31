@@ -3,9 +3,9 @@
 + hint: Min length (a window), by moving the end pointer to the right, you know that to find the minimum length it only makes sense to move the start pointer to the right (as far as possible) to get a possibly smaller length
 + key: replace n*2 for loop with one for loop
 + iterate through the end of the sliding window because guarantee new window work and only need to move front pointer forward if needed
-- does not make sense to iterate through the start because you subtract the previous (out of window) but you may or may not need to add the new
+  + does not make sense to iterate through the start because you subtract the previous (out of window) but you may or may not need to add the new
 start element
-- but if you iterate through the end, you definitely just add the end
+  - but if you iterate through the end, you definitely just add the end
 + key: decide how you are going to use a while loop to dynamically adjust the start positio
 - while (condition meet): keep shrinking window until condition is no longer met
 + key： when a valid window is found, update the best counter
