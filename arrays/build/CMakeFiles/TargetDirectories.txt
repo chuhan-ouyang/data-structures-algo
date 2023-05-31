@@ -1,3 +1,0 @@
-/home/co232/data-structures-algo/arrays/build/CMakeFiles/rebuild_cache.dir
-/home/co232/data-structures-algo/arrays/build/CMakeFiles/edit_cache.dir
-/home/co232/data-structures-algo/arrays/build/CMakeFiles/test.dir
