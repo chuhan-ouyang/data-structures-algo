@@ -33,13 +33,15 @@
 ### hint:
 * the start of the cycle?
 ### key:
-*
+* 
 
 ## Other Notes:
-* make sure to delete newly created ListNodes
+* make sure to delete newly created ListNodes and set the pointer to nullptr
   * simply do: ListNode* d = new ListNode(0), and later delete d
+  * delete d; d = nullptr;
 * while (n--): elegant structure for 0-indexed traversal
   * start pointer at the head node
   * will traverse forward exactly n time
   * same effect as for (int i = 0; i < n; ++i)
+  * while (n--) curr = curr->next: will allow you get curr pointer to the nth node (0-indexed) counting from the head; 1->2->3->4
   

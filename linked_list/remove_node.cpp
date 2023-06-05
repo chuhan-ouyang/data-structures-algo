@@ -16,6 +16,7 @@ class Solution{
             }
             head = dummy->next;
             delete dummy;
+            dummy = nullptr;
             return head;
         }
 }
