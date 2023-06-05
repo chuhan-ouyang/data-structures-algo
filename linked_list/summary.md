@@ -10,6 +10,13 @@
   * delete dummy
   * return head
 
+## Saving the next pointer
+### hint:
+* manipulate the current pointer such that the original structure (where is the next node) will be lost
+### key:
+* ListNode* next = curr->next, and then manipulate curr->next
+
+
 ## Slow and Fast Pointer
 ### hint:
 * one constant traversal (slow)
@@ -23,11 +30,6 @@
 ### key:
 *
 
-## Basic Pattern: Reverse
-### hint:
-* need when traversing in a different order
-### key:
-*
 
 ## Edge Case: Cycle Start Detection
 ### hint:
