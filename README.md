@@ -1,4 +1,4 @@
-# data-structures-algo
+# Data Structures and Algorithms
 Summarization of key problems in data structures and algorithms
 
 ## General Coding Patterns
