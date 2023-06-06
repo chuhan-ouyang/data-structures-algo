@@ -6,6 +6,7 @@ Summarization of key problems in data structures and algorithms
 * two pointers same direction
 * two pointers opposite directoins (left & right directions)
 * prefix sums 
+* space op: neg index
 
 ## Linked List Summary
 * dummy node
@@ -28,3 +29,7 @@ Summarization of key problems in data structures and algorithms
 * two comparisons: forcing one of the two to be the longer one
   * if want A to be larger
   * if (b > a) swap(a, b)
+
+# Daily Log
+* 6/5: swap, reverse, remove_node, intersection, design, delete n, cycle 2, straight line (8)
+* 6/6: 
