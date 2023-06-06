@@ -1,6 +1,22 @@
 # Data Structures and Algorithms
 Summarization of key problems in data structures and algorithms
 
+## Arrays Summary
+* sliding windows
+* two pointers same direction
+* two pointers opposite directoins (left & right directions)
+* prefix sums 
+
+## Linked List Summary
+* dummy node
+* slow/fast & skip-ahead pointer
+* saving next pointer
+* cycle detection
+* floyd's algorithm for cycle start
+
+## HashSet Summary
+* 
+
 ## General Coding Patterns
 * while(n--) {op} is an elegant way to perform op n times
   * same as for (int i = 0; i < n; ++i)
