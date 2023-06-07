@@ -18,18 +18,29 @@ Summarization of key problems in data structures and algorithms
 ## HashSet Summary
 * 
 
-## General Coding Patterns
-* while(n--) {op} is an elegant way to perform op n times
-  * same as for (int i = 0; i < n; ++i)
+## Class Coding Styles
 * class design:
   * private fields: _fieldNames
+
+## Loop Coding Styles
+* while(n--) {op} is an elegant way to perform op n times
+  * same as for (int i = 0; i < n; ++i)
 * if one line while/if, don't need brackets
 * figuring out loops is about finding repetitive pattern, deciding bounds 
+
+## One Liner Coding Styles
 * basic data types: type a = 1, b = 2, c = 3, d = 4
+* can group same logic lines of code into one line, separated using ","
+* always use +=, -=, *=, /= whenever possible
+
+## Other Ops
 * two comparisons: forcing one of the two to be the longer one
   * if want A to be larger
   * if (b > a) swap(a, b)
+* find max elemnt in array: int maxVal = *max_element(v.begin(), v.end()), minVal = *min_element(v.begin(), v.end())
+* if expr used >= 3 diff craete a temp variable, if used 2 times, create temp if the expression is ugly
+
 
 # Daily Log
 * 6/5: swap, reverse, remove_node, intersection, design, delete n, cycle 2, straight line (8)
-* 6/6: 
+* 6/6: can_make_arith, find_dup, flip_bits (3)
