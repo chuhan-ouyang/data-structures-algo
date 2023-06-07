@@ -1,22 +1,16 @@
 # Hash Set Notes
 
-## Opt Alpha Hashset
+## Intersection Op Space
 ### hint:
-* need to return the new head node
-* sometimes the new head node is the original head, but othertimes modifiied
-  * eg. head pointer used for traversal (lost head)
-* easier to generalize by creating a dummy, and returning dummy->next in the end
+* commonly occuring across a list
 ### key:
-* init new dummy to link to the head
-* delete dummyHead at the end
-  * head = dummy->next
-  * delete dummy
-  * dummy = nullptr
-  * return head
+* only include in res if something appears across all
+* but we don't want to turn everything into a hashset and then iterate through the hashset again to compute the intersection
+* we want to turn one into a hashset (the intersection **must be a subset of this hashset**)
+* then iterate throught the following elements, and if they also apperar in the hashset, then this element appear in both and can be added to res
 ### problems:
-  * remove node
-  * design linked list
-  * swap 2 nodes
+  * uniq occur
+  * array inters
  
 ## Other Notes:
 * if for sure justh have 26 chars (no capitalization issues), fastest to use raw array as hashset
