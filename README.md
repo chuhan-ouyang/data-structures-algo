@@ -18,6 +18,10 @@ Summarization of key problems in data structures and algorithms
 ## HashSet Summary
 * 
 
+## Data Types
+* to convert a char to string, you must not use to_string! that will give you the ascii number
+* instead, use string(n, char), where n is the rep count
+
 ## Class Coding Styles
 * class design:
   * private fields: _fieldNames
