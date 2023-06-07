@@ -1,5 +1,4 @@
 ### Sliding Window
-
 # hint:
   + Min length (a window), by moving the end pointer to the right, you know that to find the minimum length it only makes sense to move the start pointer to the right (as far as possible) to get a possibly smaller length
   + key: replace n*2 for loop with one for loop
@@ -36,9 +35,13 @@ start element
 # hint: O(n) solution achievable with hashset, but want O(1) solution, and the range of possible elements fit in the container's size
 # key:
   * iterate through all elements with a for loop
-  * invariant: if nums[i] is negative, then the value "i" has been visited before
+  * invariant: if nums[i] is negative, then the value "i" has been visited before -> depending on the problem, you may report false now if you don't want duplicates
   * if you have visited an element, then mark it as negative (don't incr/decr vals)
   * if you encounter a neg element, you know this value has been visited before
-  * use abs val to retrive nums[i], because nums[i] might be reversed before due to a previous element literally of the size nums[i] being visited before 
-  * you still care about the current value, whether it be neg/pos, because the marking of the negative occurs due to a prevoiusly seen element whose value is the same as the curr index 
+  * always use abs val to retrive nums[i], because nums[i] might be reversed before due to a previous element literally of the size nums[i] being visited before 
+  * you still care about the current value, whether it be neg/pos, because the marking of the negative occurs due to a prevoiusly seen element whose value is the same as the curr index is independent of this current value
+  * preq: all elements must be converted to positive! 0 is not acceptable because 0 = -0
+# problems:
+  * find dups
+  * can make arithmetics
   
