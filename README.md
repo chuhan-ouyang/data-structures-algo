@@ -16,12 +16,17 @@ Summarization of key problems in data structures and algorithms
 * floyd's algorithm for cycle start
 
 ## HashSet Summary
-* 
+* intersection op space
 
 ## Data Types
 * to convert a char to string, you must not use to_string! that will give you the ascii number
 * instead, use string(n, char), where n is the rep count
 
+## Containers: Vectors
+* construct vector using other containers (eg. unordered_set) vector<int> v(s.begin(), s.end());
+* in return statements, for simplicity, can just return ..vector<int> constructor without giving it a name
+  * eg. return vector<int>(10, 0), return vector<int>(s.begin(), s.end()), return {1,2,3,4}
+ 
 ## Class Coding Styles
 * class design:
   * private fields: _fieldNames
