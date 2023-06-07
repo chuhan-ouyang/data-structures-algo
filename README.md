@@ -17,6 +17,8 @@ Summarization of key problems in data structures and algorithms
 
 ## HashSet Summary
 * intersection op space
+* to interate through unordered_set/set:
+  * for (const auto& elem: s){elem...}
 
 ## Data Types
 * to convert a char to string, you must not use to_string! that will give you the ascii number
@@ -53,3 +55,4 @@ Summarization of key problems in data structures and algorithms
 # Daily Log
 * 6/5: swap, reverse, remove_node, intersection, design, delete n, cycle 2, straight line (8)
 * 6/6: can_make_arith, find_dup, flip_bits (3)
+* 6/7: common, intersection
