@@ -44,4 +44,26 @@ start element
 # problems:
   * find dups
   * can make arithmetics
-  
+
+
+## Traversing Sorted Array
+# hint: the array is somewhat sorted, want to optimize to a solution that is better than O(n^2)
+# key: 
+* figure out a global sequence based on the sorting, can you converge to a zigzag order:
+* if knowing that a number is positive/negative, what does this convey about the pos/neg/smaller/larger information about the surrounding rows and columns?
+* going across the 8 directions (neighbors), what is guaranteed in terms of smaller/larger?
+# problems:
+* count neg
+
+
+## Time Op: O(n^2) to O(n) or O(m + n)
+# hint: large array, but we don't want to traverse the entire array!
+# key:
+* don't be so restrictive and think that you can only traverse one row/column
+* figure out a way to move the two pointers for row and col only in one direction
+  * eg. row ptr can only move down, and col pointer can only move right, so you never have the col pointer moving back and forth between 0 and max col (hence not a m * n sol)
+* for one dim (row/col), you still sequentially progress, however, see if for the other direction, you can "safely eliminate"
+  * eg. in the count neg problem, once you know that a number is negative, all numbers to the right and down must be negative (forming a negative sub-array), so to count the total number of positive numbers, move row pointer upward since this row is no longer relevant
+* think: early breaking!
+# problems:
+* count neg
