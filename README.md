@@ -1,4 +1,4 @@
-<span style="font-family:verdana">Verdana font
+<span style="font-family:verdana">Verdana font</span>.
 
 # Data Structures and Algorithms
 Summarization of key problems in data structures and algorithms
@@ -68,4 +68,4 @@ Summarization of key problems in data structures and algorithms
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
 * 6/8:
     
-</span>.
+
