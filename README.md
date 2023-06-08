@@ -1,3 +1,5 @@
+<span style="color: #f2cf4a; font-family: Babas; font-size: 2em;">INSPIRATION DAY</span>
+
 # Data Structures and Algorithms
 Summarization of key problems in data structures and algorithms
 
