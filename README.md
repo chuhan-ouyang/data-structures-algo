@@ -58,10 +58,16 @@ Summarization of key problems in data structures and algorithms
 * find max elemnt in array: int maxVal = *max_element(v.begin(), v.end()), minVal = *min_element(v.begin(), v.end())
 * if expr used >= 3 diff craete a temp variable, if used 2 times, create temp if the expression is ugly
 * raw arrays must be initialized! if you just do int r[26]; there are going to be rando values in mem :(
+* -n -> n needs (2n + 1) elements of storage
+* whenever you create a new array, carefully think what does arr[i] mean
+  * for example, does not represent the ith (0-index) elem's value
+  * or, does it represent the (ith + 1)'s elem's value
+    * in this case, you need to do index = realIndex - 1
+  * be careful to align the meaning with the index and see if any conversion is possible
 
 
 # Daily Log
 * 6/5: swap, reverse, remove_node, intersection, design, delete n, cycle 2, straight line (8)
 * 6/6: can_make_arith, find_dup, flip_bits (3)
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
-* 6/8:
+* 6/8: longest arith seq
