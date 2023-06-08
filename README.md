@@ -1,5 +1,3 @@
-In his beard lived three <span style="color:red">cardinals</span>.
-
 # Data Structures and Algorithms
 Summarization of key problems in data structures and algorithms
 
