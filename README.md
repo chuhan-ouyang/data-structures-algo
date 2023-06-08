@@ -1,12 +1,4 @@
-/* Whole document: */
-body{
-  font-family: Helvetica;
-  font-size: 16pt;
-}
-/* Headers */
-h1,h2,h3,h4,h5,h6{
-  font-size: 24pt;
-}
+<span style="font-family:verdana">Verdana font
 
 # Data Structures and Algorithms
 Summarization of key problems in data structures and algorithms
@@ -75,3 +67,5 @@ Summarization of key problems in data structures and algorithms
 * 6/6: can_make_arith, find_dup, flip_bits (3)
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
 * 6/8:
+    
+</span>.
