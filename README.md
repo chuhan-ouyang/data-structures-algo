@@ -72,11 +72,11 @@
 * Intersection of two sets
 ### Prefix Sum  
 ### Sliding Window  
-Hint
-* d
-Key
-* d
-Problem
+> Hint
+* d \
+> Key
+* d \
+> Problem
 * d
 ### Two Pointers  
 * Same direction
