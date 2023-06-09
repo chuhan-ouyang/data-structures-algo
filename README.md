@@ -7,7 +7,7 @@
   1.4 Queues\
   1.5 Hashset\
   1.6 Hashmaps\
-2. Algorithms\
+### 2. Algorithms\
   2.1 Backtracking(:star::star::star:)\
   2.1 Dynamic programming(:star::star:\:star::star::star:)
   2.1 Greedy(:star::star::star:)\
@@ -19,15 +19,15 @@
   2.1 Prefix Sum\
   2.1 Sliding Window\
   2.1 Two Pointers (Same Direction, Op\posite Direction)
-3. Logic/Patterns\
+### 3. Logic/Patterns\
   3.1 Trading Space/Time\
   3.1 Redundant Computation Eliminatio\n
   3.1 Early Exit\
   3.1 Negative Indexing\
   3.1 Intersection Detection\
-4. Contorl Flow Management\
+### 4. Contorl Flow Management\
   4.1 For/While Precise Control\
-5. C++ Familiarity\
+### 5. C++ Familiarity\
   5.1 String\
   5.1 Vector\
   5.1 Hashset\
@@ -37,10 +37,10 @@
   5.1 Arithmetic\
   5.1 Bit\
   5.1 Others\
-6. Style\
+### 6. Style\
   6.1 Elegance\
   6.1 Clarity\
-7. Approach/Mindset\
+### 7. Approach/Mindset\
 
 > Section 1: Data Structures
 ### Linked List
