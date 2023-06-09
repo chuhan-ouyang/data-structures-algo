@@ -182,11 +182,28 @@
 
 ### Sliding Window  
 > Hint
-* d 
+* Find min/max length of some window
+* Reduce from O(n<sup>2) to O(n) time complexity
 > Key
-* d 
+* For loop iterate through all possible **end** of the window in sequence
+  * Update the running state when appending a new **end** element
+* While loop to dynamically adjust the pointer of the **front** of the window 
+  * Keep looping uner some condition
+* When a valid window is found, update best counter
+```cpp
+int res = 0; // best tracker
+int start = 0;
+for (int end = 0; end < A.size(); end++){ // move end ptr in seq
+  // update running state based on end
+  // update best if applicable
+  while (c) { // condition for the interval to be valid
+    ++start;
+  }
+}
+return res;
+```
 > Problem
-* d
+* [Fruits Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
 
 ### Two Pointers: Same Direction
 > Hint
@@ -296,7 +313,7 @@ for (int i = 0; i < s.size(); i++){
 ``` 
 
 ### Arithmetic
-* m^n
+* m<sup>n
 ```cpp
 int res = pow(m, n); // m ^ n is bitwise XOR
 ```
