@@ -1,12 +1,12 @@
 # Data Structure and Algorithms, C++ Fundamentals
 
 ### 1. Data Structure 
-  ### &emsp; 1.1 Linked List 
-  ### &emsp; 1.2 Trees     
-  ### &emsp; 1.3 Stack
-  ### &emsp; 1.4 Queues
-  ### &emsp; 1.5 Hashset
-  ### &emsp; 1.6 Hashmaps
+  #### &emsp; 1.1 Linked List 
+  #### &emsp; 1.2 Trees     
+  #### &emsp; 1.3 Stack
+  #### &emsp; 1.4 Queues
+  #### &emsp; 1.5 Hashset
+  #### &emsp; 1.6 Hashmaps
 ### 2. Algorithms
   ### &emsp; 2.1 Backtracking(:star::star::star:)
   ### &emsp; 2.2 Dynamic programming(:star::star::star::star::star:)
