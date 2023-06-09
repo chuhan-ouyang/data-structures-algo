@@ -1,6 +1,18 @@
 # Data Structures and Algorithms
 Summarization of key problems in data structures and algorithms
 
+# Tips
+For important questions
+1. time & carefully raed the questions
+2. sketch sol on paper, run through test cases
+3. espeically work through new/diff logic
+4. pseudo
+5. code
+6. run
+7. think about edge, then submit
+8. doc what went wrong, key ideas, op
+9. update summary and readme
+
 ## Arrays Summary
 * sliding windows
 * two pointers same direction
@@ -106,6 +118,18 @@ reverse(v.begin() + i, v.begin() + i + k);
 * to do number * variable, you may be tempted to do numbervariable, but you cannot forget the *
   * eg. 2k is not allowed, must write out 2 * k
 
+## Ops/Knowledge
+* Memory Usage: mostly measuring changable area
+  * stack: methods params, local variables, return values, recursion call stack
+  * heap: for "new" objects
+* memory alignment
+  * especially important for cross-platform languages 
+  * useful becuase not all hardware platform can easily access all memory addresses
+    * some hardare platforms can only access some memory address with some specific data types
+    * must have mem alignment for a program to run on multiple platforms
+  * memory alignment also significantly reduces the speed that CPU access the memory
+* compiler will op for mem alignment
+
 ## Other  
 * two comparisons: forcing one of the two to be the longer one
   * if want A to be larger
@@ -125,4 +149,5 @@ reverse(v.begin() + i, v.begin() + i + k);
 * 6/5: swap, reverse, remove_node, intersection, design, delete n, cycle 2, straight line (8)
 * 6/6: can_make_arith, find_dup, flip_bits (3)
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
-* 6/8: longest arith seq
+* 6/8: longest arith seq, three sum, bsearch, reverse string 1, reverse string 2 (5)
+* 6/9: 
