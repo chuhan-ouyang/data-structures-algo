@@ -9,7 +9,7 @@
   1.6 Hashmaps
 ### 2. Algorithms
   2.1 Backtracking(:star::star::star:)\
-  2.1 Dynamic programming(:star::star:\:star::star::star:)
+  2.1 Dynamic programming(:star::star::star::star::star:)\
   2.1 Greedy(:star::star::star:)\
   2.1 Graph (Traversal, Min, Cycles)\
   2.1 Linked List\
@@ -51,7 +51,8 @@
 ### Hashset
 ### Hashmap
 
-## > Section 2: Algorithms
+&nbsp;
+> # Section 2: Algorithms
 ### Backtracking Overwiew
 ### DP Overview
 ### Greedy Overwiew
@@ -73,7 +74,9 @@
 * Same direction
 * Opposite direction
 
-## > Section 3: Logic/Patterns
+
+&nbsp;
+> # Section 3: Logic/Patterns
 ### Trading Space/Time
 ### Redundant Computation Elimination
 ### Early Exit
@@ -81,11 +84,15 @@
 ### Intersection
 * One structure as hashset, another as traversal
  
-## > Section 4: Contorl Flow Management
+
+&nbsp;
+> # Section 4: Contorl Flow Management
 ### For/While Precise Control
 * replace for loop
 
-## > Section 5: C++ Fundamentals
+
+&nbsp;
+> # Section 5: C++ Fundamentals
 ### String Library
 * reverse: done in place, O(n)
   * range: [)
@@ -184,7 +191,9 @@ if (b > a) swap(a, b);
 * array index misalignment
   * eg. if use index i to represent to represent sequence (ith + 1), must access arr using A[seq - 1]
 
-## > Section 6: Style
+
+&nbsp;
+> # Section 6: Style
 ### Op Tips
 * raw array faster
 ```cpp
@@ -214,7 +223,9 @@ int a = 1, b = 2, c = 3, d;
 * class private fields: _fieldNames
 * add temp variable to store expressions if used multiple time/obscure
 
-## > Section 7: Approach/Mindset
+
+&nbsp;
+> # Section 7: Approach/Mindset
 1. Time, carefully read question, carefully read test case
   - how does the cases differ?
   - what are the different scenario to consider
