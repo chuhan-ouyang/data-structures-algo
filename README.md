@@ -1,45 +1,45 @@
 # Data Structure and Algorithms, C++ Fundamentals
 
 ### 1. Data Structure 
-  ### &emsp; 1.1 Linked List \
-  ### 1.2 Trees      \
-  1.3 Stack\
-  1.4 Queues\
-  1.5 Hashset\
-  1.6 Hashmaps
+  ### &emsp; 1.1 Linked List 
+  ### &emsp; 1.2 Trees     
+  ### &emsp; 1.3 Stack
+  ### &emsp; 1.4 Queues
+  ### &emsp; 1.5 Hashset
+  ### &emsp; 1.6 Hashmaps
 ### 2. Algorithms
-  2.1 Backtracking(:star::star::star:)\
-  2.2 Dynamic programming(:star::star::star::star::star:)\
-  2.3 Greedy(:star::star::star:)\
-  2.4 Graph (Traversal, Min, Cycles)\
-  2.5 Linked List\
-  2.6 Tree  \
-  2.7 Sorting\
-  2.8 Searching\
-  2.9 Prefix Sum\
-  2.10 Sliding Window\
-  2.11 Two Pointers (Same Direction, Op\posite Direction)
+  ### &emsp; 2.1 Backtracking(:star::star::star:)
+  ### &emsp; 2.2 Dynamic programming(:star::star::star::star::star:)
+  ### &emsp; 2.3 Greedy(:star::star::star:)
+  ### &emsp; 2.4 Graph (Traversal, Min, Cycles)
+  ### &emsp; 2.5 Linked List
+  ### &emsp; 2.6 Tree  
+  ### &emsp; 2.7 Sorting
+  ### &emsp; 2.8 Searching
+  ### &emsp; 2.9 Prefix Sum
+  ### &emsp; 2.10 Sliding Window
+  ### &emsp; 2.11 Two Pointers (Same Direction, Op\posite Direction)
 ### 3. Logic/Patterns
-  3.1 Trading Space/Time\
-  3.2 Redundant Computation Eliminatio\n
-  3.3 Early Exit\
-  3.4 Negative Indexing\
-  3.5 Intersection Detection
+  ### &emsp; 3.1 Trading Space/Time
+  ### &emsp; 3.2 Redundant Computation Elimination
+  ### &emsp; 3.3 Early Exit
+  ### &emsp; 3.4 Negative Indexing
+  ### &emsp; 3.5 Intersection Detection
 ### 4. Contorl Flow Management
-  4.1 For/While Precise Control
+  ### &emsp; 4.1 For/While Precise Control
 ### 5. C++ Familiarity
-  5.1 String\
-  5.2 Vector\
-  5.3 Hashset\
-  5.4 Hashmap\
-  5.5 Stack\
-  5.6 Queue\
-  5.7 Arithmetic\
-  5.8 Bit\
-  5.9 Others
+  ### &emsp; 5.1 String
+  ### &emsp; 5.2 Vector
+  ### &emsp; 5.3 Hashset
+  ### &emsp; 5.4 Hashmap
+  ### &emsp; 5.5 Stack
+  ### &emsp; 5.6 Queue
+  ### &emsp; 5.7 Arithmetic
+  ### &emsp; 5.8 Bit
+  ### &emsp; 5.9 Others
 ### 6. Style
-  6.1 Elegance\
-  6.2 Clarity
+  ### &emsp; 6.1 Elegance
+  ### &emsp; 6.2 Clarity
 ### 7. Approach/Mindset
 
 &nbsp;
