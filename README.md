@@ -1,8 +1,8 @@
 # Data Structure and Algorithms, C++ Fundamentals
 
 ### 1. Data Structure 
-  1.1 Linked List \
-  1.2 Trees      \
+  ### 1.1 Linked List \
+  ### 1.2 Trees      \
   1.3 Stack\
   1.4 Queues\
   1.5 Hashset\
