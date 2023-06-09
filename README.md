@@ -7,6 +7,7 @@
   #### &emsp; 1.4 Queues
   #### &emsp; 1.5 Hashset
   #### &emsp; 1.6 Hashmaps
+
 ### 2. Algorithms
   #### &emsp; 2.1 Backtracking(:star::star::star:)
   #### &emsp; 2.2 Dynamic programming(:star::star::star::star::star:)
@@ -19,14 +20,17 @@
   #### &emsp; 2.9 Prefix Sum
   #### &emsp; 2.10 Sliding Window
   #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)
+
 ### 3. Logic/Patterns
   #### &emsp; 3.1 Trading Space/Time
   #### &emsp; 3.2 Redundant Computation Elimination
   #### &emsp; 3.3 Early Exit
   #### &emsp; 3.4 Negative Indexing
   #### &emsp; 3.5 Intersection Detection
+
 ### 4. Contorl Flow Management
   #### &emsp; 4.1 For/While Precise Control
+
 ### 5. C++ Familiarity
   #### &emsp; 5.1 String
   #### &emsp; 5.2 Vector
@@ -39,38 +43,143 @@
   #### &emsp; 5.9 Bit
   #### &emsp; 5.10 Conversions
   #### &emsp; 5.11 Others
+
 ### 6. Style
   #### &emsp; 6.1 Elegance
   #### &emsp; 6.2 Clarity
+
 ### 7. Approach/Mindset
 
 &nbsp;
 > ## Section 1: Data Structures
 ### Linked List
+
 ### Trees
+
 ### Stacks
+
 ### Queues
+
 ### Hashset
+
 ### Hashmap
+
 
 &nbsp;
 > ## Section 2: Algorithms
+
 ### Backtracking  
-### DP  
-### Greedy  
-### Linked List  
-* Dummy node
-* Slow/fast/skip-ahead pointer
-* Saving next pointer
-* Cycle detection
-  * Cycle start detection
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d
+
+### DP
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
+### Greedy
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
+### Linked List: Dummy Node
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
+### Linked List: Two Pointers
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
+### Linked List: Saving Next Pointer
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
+### Linked List: Cycle Detection
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
+### Linked List: Cycle Start
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+ 
 ### Tree  
-### Graph  
-### Sorting  
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
+### Graph 
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
+### Sorting
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
 ### Searching  
-### Hashset  
-* Intersection of two sets
-### Prefix Sum  
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
+### Hashset: Intersection of Two Sets
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
+### Prefix Sum 
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
 ### Sliding Window  
 > Hint
 * d 
@@ -78,29 +187,49 @@
 * d 
 > Problem
 * d
-### Two Pointers  
-* Same direction
-* Opposite direction
+
+### Two Pointers: Same Direction
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
+
+### Two Pointers: Opposite Direction
+> Hint
+* d 
+> Key
+* d 
+> Problem
+* d  
 
 
 &nbsp;
 > ## Section 3: Logic/Patterns
+
 ### Trading Space/Time
+
 ### Redundant Computation Elimination
+
 ### Early Exit
+
 ### Negative Indexing
+
 ### Intersection
 * One structure as hashset, another as traversal
  
 
 &nbsp;
 > ## Section 4: Contorl Flow Management
+
 ### For/While Precise Control
 * replace for loop
 
 
 &nbsp;
 > ## Section 5: C++ Fundamentals
+
 ### String Library
 * reverse: done in place, O(n)
   * range: [)
@@ -108,12 +237,14 @@
 reverse(v.begin() + i, v.begin() + k + 1); // reverse ith to kth
 reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
 ```
+
 ### Vector Library
 * find max/min
 ```cpp
 int maxVal = *max_element(v.begin(), v.end()), minVal = *min_element(v.begin(), v.end());
 reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
 ```
+
 ### Hashset Library
 * iterate through hashset
 ```cpp
@@ -123,6 +254,7 @@ for (const auto& num: m){
 }
 string s = "abcde";
 ```
+
 ### Hashmap Library
 * iterate through hashmap
 ```cpp
@@ -132,9 +264,13 @@ for (const auto& pair: m){
 }
 string s = "abcde";
 ```
+
 ### Stack Library
+
 ### Queue Library
+
 ### Priority Queue Library
+
 ### Iterators
 * useful for strings/containers
 * dereference an iterator to see the contents
@@ -149,7 +285,7 @@ string s = "abcde";
 for (int i = 0; i < s.size(); i++){
   std::cout << *(s.begin() + i) << std::endl; // print the ith element
 }
-``` 
+```
 * the end() iterator points **after** the last element
   * to access the nth element (0-index) from the end: end() - (n + 1)
 ```cpp
@@ -158,6 +294,7 @@ for (int i = 0; i < s.size(); i++){
   std::cout << *(s.end() - i - 1) << std::endl; // print the ith element from the end
 }
 ``` 
+
 ### Arithmetic
 * m^n
 ```cpp
@@ -167,7 +304,9 @@ int res = pow(m, n); // m ^ n is bitwise XOR
 ```cpp
 int res = 2 * k; // res = 2k is illegal
 ```
+
 ### Bit Manipulations
+
 ### Converstions
 * convert a char to a string
 ```cpp
@@ -191,6 +330,7 @@ string str(v.begin(), v.end());
 ```cpp
 vector<int>(s.begin(), s.end());
 ```
+
 ### Other
 * always want var a to be larger than b
 ```cpp
@@ -208,6 +348,7 @@ if (b > a) swap(a, b);
 ```cpp
 int record[26] = {0};  // instead of vector<int> record(26, 0)
 ```
+
 ### Elegance Tips
 * return newly constructed value in the return statement
   * avoid creating a temp variable, then returning the temp variable
@@ -228,6 +369,7 @@ int num = A[i++]; // equivalent to: int num = A[i], ++i;
 int a = 1, b = 2, c = 3, d;
 ```
 * use +=, -=, *=, /= whenever possible
+
 ### Clarity Tips
 * class private fields: _fieldNames
 * add temp variable to store expressions if used multiple time/obscure
