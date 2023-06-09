@@ -73,9 +73,9 @@
 ### Prefix Sum  
 ### Sliding Window  
 > Hint
-* d \
+* d 
 > Key
-* d \
+* d 
 > Problem
 * d
 ### Two Pointers  
