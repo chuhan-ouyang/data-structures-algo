@@ -12,14 +12,14 @@
   #### &emsp; 2.1 Backtracking(:star::star::star:)
   #### &emsp; 2.2 Dynamic programming(:star::star::star::star::star:)
   #### &emsp; 2.3 Greedy(:star::star::star:)
-  #### &emsp; 2.4 Graph (Traversal, Min, Cycles)
-  #### &emsp; 2.5 Linked List
-  #### &emsp; 2.6 Tree  
-  #### &emsp; 2.7 Sorting
-  #### &emsp; 2.8 Searching
-  #### &emsp; 2.9 Prefix Sum
-  #### &emsp; 2.10 Sliding Window
-  #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)
+  #### &emsp; 2.4 Graph (Traversal, Min, Cycles)(:star::star)
+  #### &emsp; 2.5 Linked List(:star::)
+  #### &emsp; 2.6 Tree(:star::)  
+  #### &emsp; 2.7 Sorting(:star::)
+  #### &emsp; 2.8 Searching(:star::)
+  #### &emsp; 2.9 Prefix Sum(:star::)
+  #### &emsp; 2.10 Sliding Window(:star:::star::)
+  #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)(:star:::star::)
 
 ### 3. Patterns
   #### &emsp; 3.1 Trading Space/Time
@@ -30,7 +30,7 @@
   #### &emsp; 3.6 Intersection Detection
 
 ### 4. Contorl Flow Management
-  #### &emsp; 4.1 For/While Precise Control
+  #### &emsp; 4.1 For/While Precise Control(:star:::star:::star::)
 
 ### 5. C++ Familiarity
   #### &emsp; 5.1 String
