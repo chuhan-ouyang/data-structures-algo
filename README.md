@@ -224,7 +224,7 @@ int a = 1, b = 2, c = 3, d;
 * class private fields: _fieldNames
 * add temp variable to store expressions if used multiple time/obscure
 
-## > Section 7: Approach/Mindset
+> ## Section 7: Approach/Mindset
 1. Time, carefully read question, carefully read test case
   - how does the cases differ?
   - what are the different scenario to consider
