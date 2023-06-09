@@ -3,9 +3,9 @@ Summarization of key problems in data structures and algorithms
 
 # Tips
 For important questions
-1. time & carefully raed the questions
+1. time & carefully read the questions
 2. sketch sol on paper, run through test cases
-3. espeically work through new/diff logic
+3. espeically work through news/diff logic
 4. pseudo
 5. code
 6. run
@@ -31,18 +31,23 @@ For important questions
 
 ## HashSet Summary
 * intersection op space
-* to interate through unordered_set/set:
-  * for (const auto& elem: s){elem...}
 
-## HashMap Summary
+
+## String Summary
+* use lib func
+
+## HashMap/Set Tips
 * to iterate through hashmap
   * for (const auto& pair: map) {pair.first (key), pair.second (value)}
+* to iterate through ahshset
+  * to interate through unordered_set/set:
+  * for (const auto& elem: s){elem...}
 
-## Data Types
+## Data Types Tips
 * to convert a char to string, you must not use to_string! that will give you the ascii number
 * instead, use string(n, char), where n is the rep count
 
-## Iterators
+## Iterators Tips
 * useful for strings, containers
 * dereference an iterator to see the content
 ```cpp
@@ -68,7 +73,7 @@ for (int i = 0; i < s.size(); i++){
 }
 ``` 
 
-## Strings
+## Strings Tips
 * to convert a string into a vector of chars
 ```cpp
 // using special constructor 
@@ -91,7 +96,7 @@ reverse(v.begin() + i, v.begin() + k + 1);
 reverse(v.begin() + i, v.begin() + i + k);
 ```
 
-## Containers: Vectors
+## Containers: Vectors Tips
 * construct vector using other containers (eg. unordered_set) vector<int> v(s.begin(), s.end());
 * in return statements, for simplicity, can just return ..vector<int> constructor without giving it a name
   * eg. return vector<int>(10, 0), return vector<int>(s.begin(), s.end()), return {1,2,3,4}
