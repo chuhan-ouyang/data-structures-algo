@@ -18,7 +18,7 @@
   #### &emsp; 2.8 Searching
   #### &emsp; 2.9 Prefix Sum
   #### &emsp; 2.10 Sliding Window
-  #### &emsp; 2.11 Two Pointers (Same Direction, Op\posite Direction)
+  #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)
 ### 3. Logic/Patterns
   #### &emsp; 3.1 Trading Space/Time
   #### &emsp; 3.2 Redundant Computation Elimination
@@ -34,9 +34,10 @@
   #### &emsp; 5.4 Hashmap
   #### &emsp; 5.5 Stack
   #### &emsp; 5.6 Queue
-  #### &emsp; 5.7 Arithmetic
-  #### &emsp; 5.8 Bit
-  #### &emsp; 5.9 Others
+  #### &emsp; 5.7 Priority Queue
+  #### &emsp; 5.8 Arithmetic
+  #### &emsp; 5.9 Bit
+  #### &emsp; 5.10 Others
 ### 6. Style
   #### &emsp; 6.1 Elegance
   #### &emsp; 6.2 Clarity
