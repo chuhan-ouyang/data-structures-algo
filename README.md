@@ -1,6 +1,6 @@
 # :pencil: Data Structure and Algorithms, C++ Fundamentals
 
-### :books: 1. Data Structure 
+### :notebook: 1. Data Structure 
   #### &emsp; 1.1 Linked List 
   #### &emsp; 1.2 Trees     
   #### &emsp; 1.3 Stack
@@ -8,7 +8,7 @@
   #### &emsp; 1.5 Hashset
   #### &emsp; 1.6 Hashmaps
 
-### :books: 2. Algorithms
+### :notebook: 2. Algorithms
   #### &emsp; 2.1 Backtracking(:star::star::star:)
   #### &emsp; 2.2 Dynamic programming(:star::star::star::star::star:)
   #### &emsp; 2.3 Greedy(:star::star::star:)
@@ -21,7 +21,7 @@
   #### &emsp; 2.10 Sliding Window(:star::star:)
   #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)(:star::star:)
 
-### :books: 3. Patterns
+### :notebook: 3. Patterns
   #### &emsp; 3.1 Trading Space/Time
   #### &emsp; 3.2 In-Place Operations
   #### &emsp; 3.3 Redundant Computation Elimination
@@ -29,10 +29,10 @@
   #### &emsp; 3.5 Negative Indexing
   #### &emsp; 3.6 Intersection Detection
 
-### :books: 4. Contorl Flow Management
+### :notebook: 4. Contorl Flow Management
   #### &emsp; 4.1 For/While Precise Control(:star::star::star:)
 
-### :books: 5. C++ Familiarity
+### :notebook: 5. C++ Familiarity
   #### &emsp; 5.1 String
   #### &emsp; 5.2 Vector
   #### &emsp; 5.3 Hashset
@@ -45,11 +45,11 @@
   #### &emsp; 5.10 Conversions
   #### &emsp; 5.11 Others
 
-### :books: 6. Style
+### :notebook: 6. Style
   #### &emsp; 6.1 Elegance
   #### &emsp; 6.2 Clarity
 
-### :books: 7. Approach/Mindset
+### :notebook: 7. Approach/Mindset
 
 &nbsp;
 > ## :notebook: Section 1: Data Structures
