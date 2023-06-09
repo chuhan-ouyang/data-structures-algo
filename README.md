@@ -30,6 +30,55 @@ Summarization of key problems in data structures and algorithms
 * to convert a char to string, you must not use to_string! that will give you the ascii number
 * instead, use string(n, char), where n is the rep count
 
+## Iterators
+* useful for strings, containers
+* dereference an iterator to see the content
+```cpp
+string s = "abcde";
+std::cout << *s.begin() << std::endl;
+```
+* the begin() iterator refers to the very first element
+  * the nth elem is begin() + n (0-index)
+```cpp
+string s = "abcde";
+for (int i = 0; i < s.size(); i++){
+  std::cout << *(s.begin() + i) << std::endl; // print ith elem
+}
+``` 
+* on the other hand, end operator is the one after the last elem
+  * acess nth from end = end() - (n + 1)
+  * where n is the index counting from the end
+  * 0-index
+```cpp
+string s = "abcde";
+for (int i = 0; i < s.size(); i++){
+  std::cout << *(s.end() - i - 1) << std::endl; // print ith elem
+}
+``` 
+
+## Strings
+* to convert a string into a vector of chars
+```cpp
+// using special constructor 
+// string's iterators
+vector<char> v(s.begin(), s.end())
+```
+* to convert a vector of chars back to a string
+```cpp
+// using special string constructor
+// vector's iterators
+string str(v.begin(), v.end());
+```
+* note that converting a tatatype into another often involves using a constructor and using the begin() and end() iter
+* reverse done in place, built-in, efficient
+```cpp
+// reverse is [)
+// to reverse the ith to kth elem 
+reverse(v.begin() + i, v.begin() + k + 1);
+// to reverse form ith till length k
+reverse(v.begin() + i, v.begin() + i + k);
+```
+
 ## Containers: Vectors
 * construct vector using other containers (eg. unordered_set) vector<int> v(s.begin(), s.end());
 * in return statements, for simplicity, can just return ..vector<int> constructor without giving it a name
@@ -50,6 +99,12 @@ Summarization of key problems in data structures and algorithms
 * basic data types: type a = 1, b = 2, c = 3, d = 4
 * can group same logic lines of code into one line, separated using ","
 * always use +=, -=, *=, /= whenever possible
+
+
+## Arithmetic
+* to do m ^ n, don't do m ^ n (that is bitwise XOR), must to pow(m, n)
+* to do number * variable, you may be tempted to do numbervariable, but you cannot forget the *
+  * eg. 2k is not allowed, must write out 2 * k
 
 ## Other  
 * two comparisons: forcing one of the two to be the longer one
