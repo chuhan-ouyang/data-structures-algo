@@ -1,6 +1,6 @@
 # :pencil: Data Structure and Algorithms, C++ Fundamentals
 
-### :page_with_curl: 1. Data Structure 
+### :ledger: 1. Data Structure 
   #### &emsp; 1.1 Linked List 
   #### &emsp; 1.2 Trees     
   #### &emsp; 1.3 Stack
@@ -8,7 +8,7 @@
   #### &emsp; 1.5 Hashset
   #### &emsp; 1.6 Hashmaps
 
-### :page_with_curl: 2. Algorithms
+### :ledger: 2. Algorithms
   #### &emsp; 2.1 Backtracking(:star::star::star:)
   #### &emsp; 2.2 Dynamic programming(:star::star::star::star::star:)
   #### &emsp; 2.3 Greedy(:star::star::star:)
@@ -21,7 +21,7 @@
   #### &emsp; 2.10 Sliding Window(:star::star:)
   #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)(:star::star:)
 
-### :page_with_curl: 3. Patterns
+### :ledger: 3. Patterns
   #### &emsp; 3.1 Trading Space/Time
   #### &emsp; 3.2 In-Place Operations
   #### &emsp; 3.3 Redundant Computation Elimination
@@ -29,10 +29,10 @@
   #### &emsp; 3.5 Negative Indexing
   #### &emsp; 3.6 Intersection Detection
 
-### :page_with_curl: 4. Contorl Flow Management
+### :ledger: 4. Contorl Flow Management
   #### &emsp; 4.1 For/While Precise Control(:star::star::star:)
 
-### :page_with_curl: 5. C++ Familiarity
+### :ledger: 5. C++ Familiarity
   #### &emsp; 5.1 String
   #### &emsp; 5.2 Vector
   #### &emsp; 5.3 Hashset
@@ -45,31 +45,31 @@
   #### &emsp; 5.10 Conversions
   #### &emsp; 5.11 Others
 
-### :page_with_curl: 6. Style
+### :ledger: 6. Style
   #### &emsp; 6.1 Elegance
   #### &emsp; 6.2 Clarity
 
-### :page_with_curl: 7. Approach/Mindset
+### :ledger: 7. Approach/Mindset
 
 &nbsp;
 > ## :clipboard: Section 1: Data Structures
-### Linked List
+### :star: Linked List
 
-### Trees
+### :star: Trees
 
-### Stacks
+### :star: Stacks
 
-### Queues
+### :star: Queues
 
-### Hashset
+### :star: Hashset
 
-### Hashmap
+### :star: Hashmap
 
 
 &nbsp;
 > ## :clipboard: Section 2: Algorithms
 
-### Backtracking  
+### :star: Backtracking  
 > Hint
 * d 
 > Key
@@ -77,7 +77,7 @@
 > Problem
 * d
 
-### DP
+### :star: DP
 > Hint
 * d 
 > Key
@@ -85,7 +85,7 @@
 > Problem
 * d  
 
-### Greedy
+### :star: Greedy
 > Hint
 * d 
 > Key
@@ -93,7 +93,7 @@
 > Problem
 * d  
 
-### Linked List: Dummy Node
+### :star: Linked List: Dummy Node
 > Hint
 * need to return a new head node
 * sometimes the new head node is the original head, but othertimes modifiied
@@ -111,7 +111,7 @@ return res;
 > Problem
 * Most linked list questions
 
-### Linked List: Two Pointers
+### :star: Linked List: Two Pointers
 > Hint
 * One constant traversal (slow)
 * Another with a constant speed or gap away
@@ -122,7 +122,7 @@ return res;
 * [Remove Nth form End](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 * [Intersection](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 
-### Linked List: Saving Next Pointer
+### :star: Linked List: Saving Next Pointer
 > Hint
 * manipulate the next pointer
 > Key
@@ -133,7 +133,7 @@ head->next = whatever;
 > Problem
 * Most linked list problems
 
-### Linked List: Cycle Detection
+### :star: Linked List: Cycle Detection
 > Hint
 * Is there a cycle
 > Key
@@ -162,7 +162,7 @@ bool hasCycle(ListNode *head) {
 > Problem
 * Cycle questions
 
-### Linked List: Cycle Start
+### :star: Linked List: Cycle Start
 > Hint
 * Find the start
 > Key
@@ -197,7 +197,7 @@ bool hasCycle(ListNode *head) {
 > Problem
 * [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
  
-### Tree  
+### :star: Tree  
 > Hint
 * d 
 > Key
@@ -205,7 +205,7 @@ bool hasCycle(ListNode *head) {
 > Problem
 * d  
 
-### Graph 
+### :star: Graph 
 > Hint
 * d 
 > Key
@@ -213,7 +213,7 @@ bool hasCycle(ListNode *head) {
 > Problem
 * d  
 
-### Sorting
+### :star: Sorting
 > Hint
 * d 
 > Key
@@ -221,7 +221,7 @@ bool hasCycle(ListNode *head) {
 > Problem
 * d  
 
-### Searching  
+### :star: Searching  
 > Hint
 * d 
 > Key
@@ -230,7 +230,7 @@ bool hasCycle(ListNode *head) {
 * d  
 
 
-### Prefix Sum 
+### :star: Prefix Sum 
 > Hint
 * d 
 > Key
@@ -238,7 +238,7 @@ bool hasCycle(ListNode *head) {
 > Problem
 * d  
 
-### Sliding Window  
+### :star: Sliding Window  
 > Hint
 * Find min/max length of some window
 * Reduce from O(n<sup>2) to O(n) time complexity
@@ -263,7 +263,7 @@ return res;
 > Problem
 * [Fruits Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
 
-### Two Pointers: Same Direction
+### :star: Two Pointers: Same Direction
 > Hint
 * Constant traversal, and some information (position-relevant) need to be saved
 * Remove in-place
@@ -282,7 +282,7 @@ for (int fast = 0; fast < v.size(); fast++){
 > Problem
 * [Remove Element] https://leetcode.com/problems/remove-element/
 
-### Two Pointers: Opposite Direction
+### :star: Two Pointers: Opposite Direction
 > Hint
 * Sorted at the two ends, and then meet in the middle
 * Outside in
@@ -304,7 +304,7 @@ while (left <= right){
 &nbsp;
 > ## :clipboard: Section 3: Patterns
 
-### Trading Space/Time
+### :star: Trading Space/Time
 > Hint
 * d
 > Key
@@ -312,7 +312,7 @@ while (left <= right){
 > Problem
 * d
 
-### In-Place Operations
+### :star: In-Place Operations
 > Hint
 * Modify container structures/string, need to return modified structure
 * Avoid creating a new string, reduce to O(1) space complexity
@@ -322,7 +322,7 @@ while (left <= right){
 * [Reverse String 2](https://leetcode.com/problems/reverse-string-ii/)
 * [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
 
-### Redundant Computation Elimination
+### :star: Redundant Computation Elimination
 > Hint
 * d
 > Key
@@ -330,7 +330,7 @@ while (left <= right){
 > Problem
 * d
 
-### Early Exit
+### :star: Early Exit
 > Hint
 * Original structure has (partial) sorted properties
 * Reduce time complexity from O(n<sup>2) to O(n)
@@ -340,7 +340,7 @@ while (left <= right){
 > Problem
 * [Count Negative Numbers in a Sorted Matrix](https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/)
 
-### Negative Indexing
+### :star: Negative Indexing
 > Hint
 * Could achieve O(n) space complexity with hashset, but we want O(1) space complexity
 * Range of possible eliminates nicely fit within the size of the container
@@ -362,7 +362,7 @@ for (int i = 0; i < v.size(); i++){
 * [Can Make Arithmetic Progression From Sequence](https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/)
 * [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
 
-### Intersection
+### :star: Intersection
 > Hint
 * Find intersection of two arrays and satisfy some condition
 > Key
@@ -384,14 +384,14 @@ for (int i = 0; i < v.size(); i++){
 &nbsp;
 > ## :clipboard: Section 4: Contorl Flow Management
 
-### For/While Precise Control
+### :star: For/While Precise Control
 * replace for loop
 
 
 &nbsp;
 > ## :clipboard: Section 5: C++ Fundamentals
 
-### String Library
+### :star: String Library
 * reverse: done in place, O(n)
   * range: [)
 ```cpp
@@ -399,14 +399,14 @@ reverse(v.begin() + i, v.begin() + k + 1); // reverse ith to kth
 reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
 ```
 
-### Vector Library
+### :star: Vector Library
 * find max/min
 ```cpp
 int maxVal = *max_element(v.begin(), v.end()), minVal = *min_element(v.begin(), v.end());
 reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
 ```
 
-### Hashset Library
+### :star: Hashset Library
 * iterate through hashset
 ```cpp
 unordered_set<int> m;
@@ -416,7 +416,7 @@ for (const auto& num: m){
 string s = "abcde";
 ```
 
-### Hashmap Library
+### :star: Hashmap Library
 * iterate through hashmap
 ```cpp
 unordered_map<int, int> m;
@@ -426,20 +426,20 @@ for (const auto& pair: m){
 string s = "abcde";
 ```
 
-### Stack Library
+### :star: Stack Library
 
-### Queue Library
+### :star: Queue Library
 
-### Priority Queue Library
+### :star: Priority Queue Library
 
-### Raw Arrays
+### :star: Raw Arrays
 * be careful of initializing int raw arrays: can use 0
 ```cpp
 int record[26] = {0}; // ok
 int record1[26] = {1}; // not ok!
 ```
 
-### Iterators
+### :star: Iterators
 * useful for strings/containers
 * dereference an iterator to see the contents
 ```cpp
@@ -463,7 +463,7 @@ for (int i = 0; i < s.size(); i++){
 }
 ``` 
 
-### Arithmetic
+### :star: Arithmetic
 * m<sup>n
 ```cpp
 int res = pow(m, n); // m ^ n is bitwise XOR
@@ -473,7 +473,7 @@ int res = pow(m, n); // m ^ n is bitwise XOR
 int res = 2 * k; // res = 2k is illegal
 ```
 
-### Bit Manipulations
+### :star: Bit Manipulations
 * & = bitwise and
 * | = bitwise or 
 * ^ = bitwise XOR
@@ -481,7 +481,7 @@ int res = 2 * k; // res = 2k is illegal
 * \>\> (digits to shift)  
 * ~ = bitwise not
 
-### Conversions
+### :star: Conversions
 * convert a char to a string
 ```cpp
 char c = 'a';
@@ -505,7 +505,7 @@ string str(v.begin(), v.end());
 vector<int>(s.begin(), s.end());
 ```
 
-### Other
+### :star: Other
 * always want var a to be larger than b
 ```cpp
 if (b > a) swap(a, b);
@@ -517,13 +517,13 @@ if (b > a) swap(a, b);
 
 &nbsp;
 > ## :clipboard: Section 6: Style
-### Op Tips
+### :star: Op Tips
 * raw array faster
 ```cpp
 int record[26] = {0};  // instead of vector<int> record(26, 0)
 ```
 
-### Elegance Tips
+### :star: Elegance Tips
 * return newly constructed value in the return statement
   * avoid creating a temp variable, then returning the temp variable
 ```cpp
@@ -544,7 +544,7 @@ int a = 1, b = 2, c = 3, d;
 ```
 * use +=, -=, *=, /= whenever possible
 
-### Clarity Tips
+### :star: Clarity Tips
 * class private fields: _fieldNames
 * add temp variable to store expressions if used multiple time/obscure
 
