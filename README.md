@@ -37,7 +37,8 @@
   #### &emsp; 5.7 Priority Queue
   #### &emsp; 5.8 Arithmetic
   #### &emsp; 5.9 Bit
-  #### &emsp; 5.10 Others
+  #### &emsp; 5.10 Conversions
+  #### &emsp; 5.11 Others
 ### 6. Style
   #### &emsp; 6.1 Elegance
   #### &emsp; 6.2 Clarity
