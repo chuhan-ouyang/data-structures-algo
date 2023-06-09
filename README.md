@@ -10,7 +10,7 @@
 
 ### :notebook: 2. Algorithms
   #### &emsp; 2.1 Backtracking(:star::star::star:)
-  #### &emsp; 2.2 Dynamic programming(:star::star::star::star::star:)
+  #### &emsp; 2.2 Dynamic Programming(:star::star::star::star::star:)
   #### &emsp; 2.3 Greedy(:star::star::star:)
   #### &emsp; 2.4 Graph (Traversal, Min, Cycles)(:star::star:)
   #### &emsp; 2.5 Linked List(:star:)
@@ -77,7 +77,7 @@
 > Problem
 * d
 
-### :star: DP
+### :star: Dynamic Programming
 > Hint
 * d 
 > Key
