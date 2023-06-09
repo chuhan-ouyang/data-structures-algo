@@ -18,7 +18,7 @@
   #### &emsp; 2.7 Sorting(:star:)
   #### &emsp; 2.8 Searching(:star:)
   #### &emsp; 2.9 Prefix Sum(:star:)
-  #### &emsp; 2.10 Sliding Window(:star:::star:)
+  #### &emsp; 2.10 Sliding Window(:star::star:)
   #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)(:star::star:)
 
 ### 3. Patterns
