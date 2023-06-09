@@ -9,41 +9,41 @@
   1.6 Hashmaps
 ### 2. Algorithms
   2.1 Backtracking(:star::star::star:)\
-  2.1 Dynamic programming(:star::star::star::star::star:)\
-  2.1 Greedy(:star::star::star:)\
-  2.1 Graph (Traversal, Min, Cycles)\
-  2.1 Linked List\
-  2.1 Tree  \
-  2.1 Sorting\
-  2.1 Searching\
-  2.1 Prefix Sum\
-  2.1 Sliding Window\
-  2.1 Two Pointers (Same Direction, Op\posite Direction)
+  2.2 Dynamic programming(:star::star::star::star::star:)\
+  2.3 Greedy(:star::star::star:)\
+  2.4 Graph (Traversal, Min, Cycles)\
+  2.5 Linked List\
+  2.6 Tree  \
+  2.7 Sorting\
+  2.8 Searching\
+  2.9 Prefix Sum\
+  2.10 Sliding Window\
+  2.11 Two Pointers (Same Direction, Op\posite Direction)
 ### 3. Logic/Patterns
   3.1 Trading Space/Time\
-  3.1 Redundant Computation Eliminatio\n
-  3.1 Early Exit\
-  3.1 Negative Indexing\
-  3.1 Intersection Detection
+  3.2 Redundant Computation Eliminatio\n
+  3.3 Early Exit\
+  3.4 Negative Indexing\
+  3.5 Intersection Detection
 ### 4. Contorl Flow Management
   4.1 For/While Precise Control
 ### 5. C++ Familiarity
   5.1 String\
-  5.1 Vector\
-  5.1 Hashset\
-  5.1 Hashmap\
-  5.1 Stack\
-  5.1 Queue\
-  5.1 Arithmetic\
-  5.1 Bit\
-  5.1 Others
+  5.2 Vector\
+  5.3 Hashset\
+  5.4 Hashmap\
+  5.5 Stack\
+  5.6 Queue\
+  5.7 Arithmetic\
+  5.8 Bit\
+  5.9 Others
 ### 6. Style
   6.1 Elegance\
-  6.1 Clarity
+  6.2 Clarity
 ### 7. Approach/Mindset
 
 &nbsp;
-> # <span style="color:black"> Section 1: Data Structures</span>
+> ## Section 1: Data Structures
 ### Linked List
 ### Trees
 ### Stacks
@@ -52,31 +52,31 @@
 ### Hashmap
 
 &nbsp;
-> # Section 2: Algorithms
-### Backtracking Overwiew
-### DP Overview
-### Greedy Overwiew
-### Linked List Overwiew
+> ## Section 2: Algorithms
+### Backtracking  
+### DP  
+### Greedy  
+### Linked List  
 * Dummy node
 * Slow/fast/skip-ahead pointer
 * Saving next pointer
 * Cycle detection
   * Cycle start detection
-### Tree Overwiew
-### Graph Overwiew
-### Sorting Overwiew
-### Searching Overwiew
-### Hashset Overview
+### Tree  
+### Graph  
+### Sorting  
+### Searching  
+### Hashset  
 * Intersection of two sets
-### Prefix Sum Overview
-### Sliding Window Overwiew
-### Two Pointers Overwiew
+### Prefix Sum  
+### Sliding Window  
+### Two Pointers  
 * Same direction
 * Opposite direction
 
 
 &nbsp;
-> # Section 3: Logic/Patterns
+> ## Section 3: Logic/Patterns
 ### Trading Space/Time
 ### Redundant Computation Elimination
 ### Early Exit
@@ -86,13 +86,13 @@
  
 
 &nbsp;
-> # Section 4: Contorl Flow Management
+> ## Section 4: Contorl Flow Management
 ### For/While Precise Control
 * replace for loop
 
 
 &nbsp;
-> # Section 5: C++ Fundamentals
+> ## Section 5: C++ Fundamentals
 ### String Library
 * reverse: done in place, O(n)
   * range: [)
@@ -126,6 +126,7 @@ string s = "abcde";
 ```
 ### Stack Library
 ### Queue Library
+### Priority Queue Library
 ### Iterators
 * useful for strings/containers
 * dereference an iterator to see the contents
@@ -193,7 +194,7 @@ if (b > a) swap(a, b);
 
 
 &nbsp;
-> # Section 6: Style
+> ## Section 6: Style
 ### Op Tips
 * raw array faster
 ```cpp
@@ -223,9 +224,7 @@ int a = 1, b = 2, c = 3, d;
 * class private fields: _fieldNames
 * add temp variable to store expressions if used multiple time/obscure
 
-
-&nbsp;
-> # Section 7: Approach/Mindset
+## > Section 7: Approach/Mindset
 1. Time, carefully read question, carefully read test case
   - how does the cases differ?
   - what are the different scenario to consider
