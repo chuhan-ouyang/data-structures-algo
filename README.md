@@ -41,8 +41,9 @@
   6.1 Elegance\
   6.1 Clarity
 ### 7. Approach/Mindset
+\
 
-> ## Section 1: Data Structures
+> # Section 1: Data Structures
 ### Linked List
 ### Trees
 ### Stacks
