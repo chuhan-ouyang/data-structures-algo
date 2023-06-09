@@ -43,7 +43,7 @@
 ### 7. Approach/Mindset
 
 &nbsp;
-> # Section 1: Data Structures
+> # <span style="color:black"> Section 1: Data Structures</span>
 ### Linked List
 ### Trees
 ### Stacks
