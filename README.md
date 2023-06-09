@@ -1,6 +1,6 @@
 # :pencil: Data Structure and Algorithms, C++ Fundamentals
 
-### :ledger: 1. Data Structure 
+### :books: 1. Data Structure 
   #### &emsp; 1.1 Linked List 
   #### &emsp; 1.2 Trees     
   #### &emsp; 1.3 Stack
@@ -8,7 +8,7 @@
   #### &emsp; 1.5 Hashset
   #### &emsp; 1.6 Hashmaps
 
-### :ledger: 2. Algorithms
+### :books: 2. Algorithms
   #### &emsp; 2.1 Backtracking(:star::star::star:)
   #### &emsp; 2.2 Dynamic programming(:star::star::star::star::star:)
   #### &emsp; 2.3 Greedy(:star::star::star:)
@@ -21,7 +21,7 @@
   #### &emsp; 2.10 Sliding Window(:star::star:)
   #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)(:star::star:)
 
-### :ledger: 3. Patterns
+### :books: 3. Patterns
   #### &emsp; 3.1 Trading Space/Time
   #### &emsp; 3.2 In-Place Operations
   #### &emsp; 3.3 Redundant Computation Elimination
@@ -29,10 +29,10 @@
   #### &emsp; 3.5 Negative Indexing
   #### &emsp; 3.6 Intersection Detection
 
-### :ledger: 4. Contorl Flow Management
+### :books: 4. Contorl Flow Management
   #### &emsp; 4.1 For/While Precise Control(:star::star::star:)
 
-### :ledger: 5. C++ Familiarity
+### :books: 5. C++ Familiarity
   #### &emsp; 5.1 String
   #### &emsp; 5.2 Vector
   #### &emsp; 5.3 Hashset
@@ -45,14 +45,14 @@
   #### &emsp; 5.10 Conversions
   #### &emsp; 5.11 Others
 
-### :ledger: 6. Style
+### :books: 6. Style
   #### &emsp; 6.1 Elegance
   #### &emsp; 6.2 Clarity
 
-### :ledger: 7. Approach/Mindset
+### :books: 7. Approach/Mindset
 
 &nbsp;
-> ## :clipboard: Section 1: Data Structures
+> ## :notebook: Section 1: Data Structures
 ### :star: Linked List
 
 ### :star: Trees
@@ -67,7 +67,7 @@
 
 
 &nbsp;
-> ## :clipboard: Section 2: Algorithms
+> ## :notebook: Section 2: Algorithms
 
 ### :star: Backtracking  
 > Hint
@@ -302,7 +302,7 @@ while (left <= right){
 
 
 &nbsp;
-> ## :clipboard: Section 3: Patterns
+> ## :notebook: Section 3: Patterns
 
 ### :star: Trading Space/Time
 > Hint
@@ -382,14 +382,14 @@ for (int i = 0; i < v.size(); i++){
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
  
 &nbsp;
-> ## :clipboard: Section 4: Contorl Flow Management
+> ## :notebook: Section 4: Contorl Flow Management
 
 ### :star: For/While Precise Control
 * replace for loop
 
 
 &nbsp;
-> ## :clipboard: Section 5: C++ Fundamentals
+> ## :notebook: Section 5: C++ Fundamentals
 
 ### :star: String Library
 * reverse: done in place, O(n)
@@ -516,7 +516,7 @@ if (b > a) swap(a, b);
 
 
 &nbsp;
-> ## :clipboard: Section 6: Style
+> ## :notebook: Section 6: Style
 ### :star: Op Tips
 * raw array faster
 ```cpp
@@ -548,7 +548,7 @@ int a = 1, b = 2, c = 3, d;
 * class private fields: _fieldNames
 * add temp variable to store expressions if used multiple time/obscure
 
-> ## :clipboard: Section 7: Approach/Mindset
+> ## :notebook: Section 7: Approach/Mindset
 1. Time, carefully read question, carefully read test case
   - how does the cases differ?
   - what are the different scenario to consider
