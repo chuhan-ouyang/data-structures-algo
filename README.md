@@ -42,7 +42,7 @@
   6.1 Clarity
 ### 7. Approach/Mindset
 
- <br>
+&nbsp;
 > # Section 1: Data Structures
 ### Linked List
 ### Trees
