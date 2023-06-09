@@ -207,31 +207,102 @@ return res;
 
 ### Two Pointers: Same Direction
 > Hint
-* d 
+* Constant traversal, and some information (position-relevant) need to be saved
+* Remove in-place
 > Key
-* d 
+* Fast pointer iterate through each element
+* Slow pointer keep track of some "valid" condition, more selective in moving
+```cpp
+int slow = 0;
+for (int fast = 0; fast < v.size(); fast++){
+  if (c){ // if keeping this index
+    v[slow++] = v[fast];
+  }
+}
+// at the end, slow track how many elements are in the final res
+```
 > Problem
-* d  
+* [Remove Element] https://leetcode.com/problems/remove-element/
 
 ### Two Pointers: Opposite Direction
 > Hint
-* d 
+* Sorted at the two ends, and then meet in the middle
+* Outside in
 > Key
-* d 
+* One pointer start at left, another start at right
+* Keep comparing until two pointers meet
+  * Left pointer goes to the right
+  * Right pointer goes to the left
+```cpp
+int left = 0, right = v.size() - 1;
+while (left <= right){
+  if (c) ++left;
+  else --right;
+}
+```
 > Problem
-* d  
 
 
 &nbsp;
 > ## Section 3: Logic/Patterns
 
 ### Trading Space/Time
+> Hint
+* d
+> Key
+* d
+> Problem
+* d
+
+### In-Place Operations
+> Hint
+* Modify container structures/string, need to return modified structure
+* Avoid creating a new string, reduce to O(1) space complexity
+> Key
+* Strings: use reverse(), resize();
+> Problem
+* [Reverse String 2](https://leetcode.com/problems/reverse-string-ii/)
+* [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
 
 ### Redundant Computation Elimination
+> Hint
+* d
+> Key
+* d
+> Problem
+* d
 
 ### Early Exit
+> Hint
+* Original structure has (partial) sorted properties
+* Reduce time complexity from O(n<sup>2) to O(n)
+* Find all elements within a structure that satisfy some condition
+> Key
+* think: if position [x][y] meets a condition, can you infer about whether the surrounding directions (same row, same col, to the left/right/up/down) meet/does not meet this condition?
+> Problem
+* [Count Negative Numbers in a Sorted Matrix](https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/)
 
 ### Negative Indexing
+> Hint
+* Could achieve O(n) space complexity with hashset, but we want O(1) space complexity
+* Range of possible eliminates nicely fit within the size of the container
+> Key
+* When visiting an element, make the element with the corresponding index negative
+* In the original array, all elements must be converted to strictly positive values
+* Turn the array you are hashing into its own hashset
+```cpp
+for (int i = 0; i < v.size(); i++){
+  int index = abs(v[i]); // adjust index to be in range (0 -> size - 1) if needed
+  if (v[index] < 0){
+    // this element has appeared before!
+  } else{
+    v[index] *= -1; // mark as visited
+  }
+}
+```
+> Problem
+* [Can Make Arithmetic Progression From Sequence](https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/)
+* [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
 
 ### Intersection
 * One structure as hashset, another as traversal
