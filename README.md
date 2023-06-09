@@ -1,6 +1,6 @@
-# Data Structure and Algorithms, C++ Fundamentals
+# :pencil: Data Structure and Algorithms, C++ Fundamentals
 
-### 1. Data Structure 
+### :page_with_curl: 1. Data Structure 
   #### &emsp; 1.1 Linked List 
   #### &emsp; 1.2 Trees     
   #### &emsp; 1.3 Stack
@@ -8,7 +8,7 @@
   #### &emsp; 1.5 Hashset
   #### &emsp; 1.6 Hashmaps
 
-### 2. Algorithms
+### :page_with_curl: 2. Algorithms
   #### &emsp; 2.1 Backtracking(:star::star::star:)
   #### &emsp; 2.2 Dynamic programming(:star::star::star::star::star:)
   #### &emsp; 2.3 Greedy(:star::star::star:)
@@ -21,7 +21,7 @@
   #### &emsp; 2.10 Sliding Window(:star::star:)
   #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)(:star::star:)
 
-### 3. Patterns
+### :page_with_curl: 3. Patterns
   #### &emsp; 3.1 Trading Space/Time
   #### &emsp; 3.2 In-Place Operations
   #### &emsp; 3.3 Redundant Computation Elimination
@@ -29,10 +29,10 @@
   #### &emsp; 3.5 Negative Indexing
   #### &emsp; 3.6 Intersection Detection
 
-### 4. Contorl Flow Management
+### :page_with_curl: 4. Contorl Flow Management
   #### &emsp; 4.1 For/While Precise Control(:star::star::star:)
 
-### 5. C++ Familiarity
+### :page_with_curl: 5. C++ Familiarity
   #### &emsp; 5.1 String
   #### &emsp; 5.2 Vector
   #### &emsp; 5.3 Hashset
@@ -45,14 +45,14 @@
   #### &emsp; 5.10 Conversions
   #### &emsp; 5.11 Others
 
-### 6. Style
+### :page_with_curl: 6. Style
   #### &emsp; 6.1 Elegance
   #### &emsp; 6.2 Clarity
 
-### 7. Approach/Mindset
+### :page_with_curl: 7. Approach/Mindset
 
 &nbsp;
-> ## Section 1: Data Structures
+> ## :clipboard: Section 1: Data Structures
 ### Linked List
 
 ### Trees
@@ -67,7 +67,7 @@
 
 
 &nbsp;
-> ## Section 2: Algorithms
+> ## :clipboard: Section 2: Algorithms
 
 ### Backtracking  
 > Hint
@@ -302,7 +302,7 @@ while (left <= right){
 
 
 &nbsp;
-> ## Section 3: Patterns
+> ## :clipboard: Section 3: Patterns
 
 ### Trading Space/Time
 > Hint
@@ -382,14 +382,14 @@ for (int i = 0; i < v.size(); i++){
 * [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
  
 &nbsp;
-> ## Section 4: Contorl Flow Management
+> ## :clipboard: Section 4: Contorl Flow Management
 
 ### For/While Precise Control
 * replace for loop
 
 
 &nbsp;
-> ## Section 5: C++ Fundamentals
+> ## :clipboard: Section 5: C++ Fundamentals
 
 ### String Library
 * reverse: done in place, O(n)
@@ -516,7 +516,7 @@ if (b > a) swap(a, b);
 
 
 &nbsp;
-> ## Section 6: Style
+> ## :clipboard: Section 6: Style
 ### Op Tips
 * raw array faster
 ```cpp
@@ -548,7 +548,7 @@ int a = 1, b = 2, c = 3, d;
 * class private fields: _fieldNames
 * add temp variable to store expressions if used multiple time/obscure
 
-> ## Section 7: Approach/Mindset
+> ## :clipboard: Section 7: Approach/Mindset
 1. Time, carefully read question, carefully read test case
   - how does the cases differ?
   - what are the different scenario to consider
@@ -563,7 +563,7 @@ int a = 1, b = 2, c = 3, d;
 9. Update notes 
   
 
-# Daily Log
+# :pencil: Daily Log
 * 6/5: swap, reverse, remove_node, intersection, design, delete n, cycle 2, straight line (8)
 * 6/6: can_make_arith, find_dup, flip_bits (3)
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
