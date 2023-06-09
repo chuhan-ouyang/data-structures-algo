@@ -13,14 +13,14 @@
   * no need to use vector<char>!
   * can either use built-in reverse, which is [) range, or self write reverse that is [] range
   * can also reverse just a sub-segment!
-# resize
+### key:
   * allow you to shorten a string or longer a string
   * useful if you fill the first "k" elem of a string with useful content (for the result), and resizing the string will allow you to ditch the unused contents
-# void return with pass by reference
+### key:
   * use helper functions to modify strings in place
     * void
     * string& s as arg
     * modify s in place
-# problems:
+### key:
   * reverse string 2
   * reverse words

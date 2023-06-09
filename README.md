@@ -1,158 +1,235 @@
-# Data Structures and Algorithms
-Summarization of key problems in data structures and algorithms
+# Data Structure and Algorithms, C++ Fundamentals
+1. Data Structure
+  - Linked List
+  - Trees
+  - Stack
+  - Queues
+  - Hashset
+  - Hashmaps
+2. Algorithms
+  - Backtracking(:star::star::star:)
+  - Dynamic programming(:star::star::star::star::star:)
+  - Greedy(:star::star::star:)
+  - Graph (Traversal, Min, Cycles)
+  - Linked List
+  - Tree  
+  - Sorting
+  - Searching
+  - Prefix Sum
+  - Sliding Window
+  - Two Pointers (Same Direction, Opposite Direction)
+3. Logic/Patterns
+  - Trading Space/Time
+  - Redundant Computation Elimination
+  - Early Exit
+  - Negative Indexing
+  - Intersection Detection
+4. Contorl Flow Management
+  - For/While Precise Control
+5. C++ Familiarity
+  - String
+  - Vector
+  - Hashset
+  - Hashmap
+  - Stack
+  - Queue
+  - Arithmetic
+  - Bit
+  - Others
+6. Style
+  - Elegance
+  - Clarity
+7. Approach/Mindset
 
-# Tips
-For important questions
-1. time & carefully read the questions
-2. sketch sol on paper, run through test cases
-3. espeically work through news/diff logic
-4. pseudo
-5. code
-6. run
-7. think about edge, then submit
-8. doc what went wrong, key ideas, op
-9. update summary and readme
+## > Section 1: Data Structures
+### Linked List
+### Trees
+### Stacks
+### Queues
+### Hashset
+### Hashmap
 
-## Arrays Summary
-* sliding windows
-* two pointers same direction
-* two pointers opposite directoins (left & right directions)
-* prefix sums 
-* space op: neg index
-* sorted matrix
-* n^2 to n time op
+## > Section 2: Algorithms
+### Backtracking Overwiew
+### DP Overview
+### Greedy Overwiew
+### Linked List Overwiew
+* Dummy node
+* Slow/fast/skip-ahead pointer
+* Saving next pointer
+* Cycle detection
+  * Cycle start detection
+### Tree Overwiew
+### Graph Overwiew
+### Sorting Overwiew
+### Searching Overwiew
+### Hashset Overview
+* Intersection of two sets
+### Prefix Sum Overview
+### Sliding Window Overwiew
+### Two Pointers Overwiew
+* Same direction
+* Opposite direction
 
-## Linked List Summary
-* dummy node
-* slow/fast & skip-ahead pointer
-* saving next pointer
-* cycle detection
-* floyd's algorithm for cycle start
+## > Section 3: Logic/Patterns
+### Trading Space/Time
+### Redundant Computation Elimination
+### Early Exit
+### Negative Indexing
+### Intersection
+* One structure as hashset, another as traversal
+ 
+## > Section 4: Contorl Flow Management
+### For/While Precise Control
+* replace for loop
 
-## HashSet Summary
-* intersection op space
-
-
-## String Summary
-* use lib func
-
-## HashMap/Set Tips
-* to iterate through hashmap
-  * for (const auto& pair: map) {pair.first (key), pair.second (value)}
-* to iterate through ahshset
-  * to interate through unordered_set/set:
-  * for (const auto& elem: s){elem...}
-
-## Data Types Tips
-* to convert a char to string, you must not use to_string! that will give you the ascii number
-* instead, use string(n, char), where n is the rep count
-
-## Iterators Tips
-* useful for strings, containers
-* dereference an iterator to see the content
+## > Section 5: C++ Fundamentals
+### String Library
+* reverse: done in place, O(n)
+  * range: [)
+```cpp
+reverse(v.begin() + i, v.begin() + k + 1); // reverse ith to kth
+reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
+```
+### Vector Library
+* find max/min
+```cpp
+int maxVal = *max_element(v.begin(), v.end()), minVal = *min_element(v.begin(), v.end());
+reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
+```
+### Hashset Library
+* iterate through hashset
+```cpp
+unordered_set<int> m;
+for (const auto& num: m){
+  cout << num << endl;
+}
+string s = "abcde";
+```
+### Hashmap Library
+* iterate through hashmap
+```cpp
+unordered_map<int, int> m;
+for (const auto& pair: m){
+  cout << pair.first << ": " << pair.second << endl;
+}
+string s = "abcde";
+```
+### Stack Library
+### Queue Library
+### Iterators
+* useful for strings/containers
+* dereference an iterator to see the contents
 ```cpp
 string s = "abcde";
 std::cout << *s.begin() << std::endl;
 ```
-* the begin() iterator refers to the very first element
-  * the nth elem is begin() + n (0-index)
+* dereferencing the begin() iterator refers to the first element
+  * the nth element (0-index) can be accessed by begin() + n
 ```cpp
 string s = "abcde";
 for (int i = 0; i < s.size(); i++){
-  std::cout << *(s.begin() + i) << std::endl; // print ith elem
+  std::cout << *(s.begin() + i) << std::endl; // print the ith element
 }
 ``` 
-* on the other hand, end operator is the one after the last elem
-  * acess nth from end = end() - (n + 1)
-  * where n is the index counting from the end
-  * 0-index
+* the end() iterator points **after** the last element
+  * to access the nth element (0-index) from the end: end() - (n + 1)
 ```cpp
 string s = "abcde";
 for (int i = 0; i < s.size(); i++){
-  std::cout << *(s.end() - i - 1) << std::endl; // print ith elem
+  std::cout << *(s.end() - i - 1) << std::endl; // print the ith element from the end
 }
 ``` 
-
-## Strings Tips
-* to convert a string into a vector of chars
+### Arithmetic
+* m^n
 ```cpp
-// using special constructor 
-// string's iterators
+int res = pow(m, n); // m ^ n is bitwise XOR
+```
+* num * var
+```cpp
+int res = 2 * k; // res = 2k is illegal
+```
+### Bit Manipulations
+### Converstions
+* convert a char to a string
+```cpp
+char c = 'a';
+string s = string(1, c); // don't use to_string
+```
+* convert a number to string
+```cpp
+string res = "hello";
+res += to_string(3); // must use to_string 
+```
+* convert a string into a vector of chars
+```cpp
 vector<char> v(s.begin(), s.end())
 ```
 * to convert a vector of chars back to a string
 ```cpp
-// using special string constructor
-// vector's iterators
 string str(v.begin(), v.end());
 ```
-* note that converting a tatatype into another often involves using a constructor and using the begin() and end() iter
-* reverse done in place, built-in, efficient
+* convert an unordered_set into vector
 ```cpp
-// reverse is [)
-// to reverse the ith to kth elem 
-reverse(v.begin() + i, v.begin() + k + 1);
-// to reverse form ith till length k
-reverse(v.begin() + i, v.begin() + i + k);
+vector<int>(s.begin(), s.end());
 ```
+### Other
+* always want var a to be larger than b
+```cpp
+if (b > a) swap(a, b);
+```
+* covering range [-n, n] need (2n + 1) elements
+* array index misalignment
+  * eg. if use index i to represent to represent sequence (ith + 1), must access arr using A[seq - 1]
 
-## Containers: Vectors Tips
-* construct vector using other containers (eg. unordered_set) vector<int> v(s.begin(), s.end());
-* in return statements, for simplicity, can just return ..vector<int> constructor without giving it a name
-  * eg. return vector<int>(10, 0), return vector<int>(s.begin(), s.end()), return {1,2,3,4}
- 
-## Class Coding Styles
-* class design:
-  * private fields: _fieldNames
+## > Section 6: Style
+### Op Tips
+* raw array faster
+```cpp
+int record[26] = {0};  // instead of vector<int> record(26, 0)
+```
+### Elegance Tips
+* return newly constructed value in the return statement
+  * avoid creating a temp variable, then returning the temp variable
+```cpp
+return vector<int>(s.begin(), s.end());
+return vector<int>(10, 0);
+return {1,2,3,4};
+```
+* one liner if: don't need brackets
+* while(1) instead of while(true)
+* ++i is faster
+* when accessing an element and immediately bumping the iter after access
+```cpp
+int num = A[i++]; // equivalent to: int num = A[i], ++i;
+```
+* multi-declare/init
+```cpp
+int a = 1, b = 2, c = 3, d;
+```
+* use +=, -=, *=, /= whenever possible
+### Clarity Tips
+* class private fields: _fieldNames
+* add temp variable to store expressions if used multiple time/obscure
 
-## Loop Coding Styles
-* while(n--) {op} is an elegant way to perform op n times
-  * same as for (int i = 0; i < n; ++i)
-* if one line while/if, don't need brackets
-* figuring out loops is about finding repetitive pattern, deciding bounds 
-* using while(1) instead of while(true) is smart
-
-## One Liner Coding Styles
-* basic data types: type a = 1, b = 2, c = 3, d = 4
-* can group same logic lines of code into one line, separated using ","
-* always use +=, -=, *=, /= whenever possible
-
-
-## Arithmetic
-* to do m ^ n, don't do m ^ n (that is bitwise XOR), must to pow(m, n)
-* to do number * variable, you may be tempted to do numbervariable, but you cannot forget the *
-  * eg. 2k is not allowed, must write out 2 * k
-
-## Ops/Knowledge
-* Memory Usage: mostly measuring changable area
-  * stack: methods params, local variables, return values, recursion call stack
-  * heap: for "new" objects
-* memory alignment
-  * especially important for cross-platform languages 
-  * useful becuase not all hardware platform can easily access all memory addresses
-    * some hardare platforms can only access some memory address with some specific data types
-    * must have mem alignment for a program to run on multiple platforms
-  * memory alignment also significantly reduces the speed that CPU access the memory
-* compiler will op for mem alignment
-
-## Other  
-* two comparisons: forcing one of the two to be the longer one
-  * if want A to be larger
-  * if (b > a) swap(a, b)
-* find max elemnt in array: int maxVal = *max_element(v.begin(), v.end()), minVal = *min_element(v.begin(), v.end())
-* if expr used >= 3 diff craete a temp variable, if used 2 times, create temp if the expression is ugly
-* raw arrays must be initialized! if you just do int r[26]; there are going to be rando values in mem :(
-* -n -> n needs (2n + 1) elements of storage
-* whenever you create a new array, carefully think what does arr[i] mean
-  * for example, does not represent the ith (0-index) elem's value
-  * or, does it represent the (ith + 1)'s elem's value
-    * in this case, you need to do index = realIndex - 1
-  * be careful to align the meaning with the index and see if any conversion is possible
-
+## > Section 7: Approach/Mindset
+1. Time, carefully read question, carefully read test case
+  - how does the cases differ?
+  - what are the different scenario to consider
+2. Sketch solution on paper, run through solution on all test cases
+3. Pseudocode and code
+  - while coding, beaware of data structures, specs, precisely type
+4. Examine code, work through difficult logic "hotspots"
+5. Debug with example test case
+6. Identify edge cases
+7. Debug with the full test suite
+8. Document mistakes/ops
+9. Update notes 
+  
 
 # Daily Log
 * 6/5: swap, reverse, remove_node, intersection, design, delete n, cycle 2, straight line (8)
 * 6/6: can_make_arith, find_dup, flip_bits (3)
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
 * 6/8: longest arith seq, three sum, bsearch, reverse string 1, reverse string 2 (5)
-* 6/9: 
+* 6/9: reverse words
