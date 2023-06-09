@@ -21,12 +21,13 @@
   #### &emsp; 2.10 Sliding Window
   #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)
 
-### 3. Logic/Patterns
+### 3. Patterns
   #### &emsp; 3.1 Trading Space/Time
-  #### &emsp; 3.2 Redundant Computation Elimination
-  #### &emsp; 3.3 Early Exit
-  #### &emsp; 3.4 Negative Indexing
-  #### &emsp; 3.5 Intersection Detection
+  #### &emsp; 3.2 In-Place Operations
+  #### &emsp; 3.3 Redundant Computation Elimination
+  #### &emsp; 3.4 Early Exit
+  #### &emsp; 3.5 Negative Indexing
+  #### &emsp; 3.6 Intersection Detection
 
 ### 4. Contorl Flow Management
   #### &emsp; 4.1 For/While Precise Control
@@ -94,43 +95,107 @@
 
 ### Linked List: Dummy Node
 > Hint
-* d 
+* need to return a new head node
+* sometimes the new head node is the original head, but othertimes modifiied
+  * eg. head pointer used for traversal (lost head)
+  * eg. head node deleted
 > Key
-* d 
+```cpp
+ListNode* dummy = new ListNode(0);
+dummy->next = head;
+// computations
+ListNode* res = dummy->next;
+delete dummy;
+return res;
+```
 > Problem
-* d  
+* Most linked list questions
 
 ### Linked List: Two Pointers
 > Hint
-* d 
+* One constant traversal (slow)
+* Another with a constant speed or gap away
 > Key
-* d 
+* Fast usually update with fast->next->next
+* Or fast can skip ahead by n
 > Problem
-* d  
+* [Remove Nth form End](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
+* [Intersection](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 
 ### Linked List: Saving Next Pointer
 > Hint
-* d 
+* manipulate the next pointer
 > Key
-* d 
+```cpp
+ListNode* next = head->next;
+head->next = whatever;
+```
 > Problem
-* d  
+* Most linked list problems
 
 ### Linked List: Cycle Detection
 > Hint
-* d 
+* Is there a cycle
 > Key
-* d 
+* slow and fast pointer
+* if there is cycle, then they will intersect when fast has gone a full cycle ahead
+* think: chasing problem
+```cpp
+bool hasCycle(ListNode *head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+
+        while (fast != NULL && fast->next != NULL)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+            
+            if (slow == fast)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+```
 > Problem
-* d  
+* Cycle questions
 
 ### Linked List: Cycle Start
 > Hint
-* d 
+* Find the start
 > Key
-* d 
+* 2 (x + y) = x + y + y + z, so x = z
+* after intersecting once (which definitely will happen if there is a cycle), then end and start can traverse in sync (the same distance x, z) and will meet at the start again
+```cpp
+ ListNode *detectCycle(ListNode *head) {
+        ListNode* slow = head;
+        ListNode* fast = head;
+
+        while (fast && fast->next)
+        {
+            slow = slow->next;
+            fast = fast->next->next;
+            if (slow == fast)
+            {
+                break;
+            }
+        }
+        if (!(fast && fast->next))
+        {
+            return NULL;
+        }
+        while (head != slow)
+        {
+            head = head->next;
+            slow = slow->next;
+        }
+        return head;
+    }
+```
 > Problem
-* d  
+* [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
  
 ### Tree  
 > Hint
@@ -164,13 +229,6 @@
 > Problem
 * d  
 
-### Hashset: Intersection of Two Sets
-> Hint
-* d 
-> Key
-* d 
-> Problem
-* d  
 
 ### Prefix Sum 
 > Hint
@@ -244,7 +302,7 @@ while (left <= right){
 
 
 &nbsp;
-> ## Section 3: Logic/Patterns
+> ## Section 3: Patterns
 
 ### Trading Space/Time
 > Hint
@@ -305,9 +363,24 @@ for (int i = 0; i < v.size(); i++){
 * [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
 
 ### Intersection
-* One structure as hashset, another as traversal
+> Hint
+* Find intersection of two arrays and satisfy some condition
+> Key
+* Turn the first into a hashset (either directly or do it while iterating)
+* For loop to iterate through the second structure, check if the element in need is in the first hashset
+```cpp
+for (int i = 0; i < v.size(); i++){
+  int index = abs(v[i]); // adjust index to be in range (0 -> size - 1) if needed
+  if (v[index] < 0){
+    // this element has appeared before!
+  } else{
+    v[index] *= -1; // mark as visited
+  }
+}
+```
+> Problem
+* [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
  
-
 &nbsp;
 > ## Section 4: Contorl Flow Management
 
@@ -359,6 +432,13 @@ string s = "abcde";
 
 ### Priority Queue Library
 
+### Raw Arrays
+* be careful of initializing int raw arrays: can use 0
+```cpp
+int record[26] = {0}; // ok
+int record1[26] = {1}; // not ok!
+```
+
 ### Iterators
 * useful for strings/containers
 * dereference an iterator to see the contents
@@ -394,8 +474,14 @@ int res = 2 * k; // res = 2k is illegal
 ```
 
 ### Bit Manipulations
+* & = bitwise and
+* | = bitwise or 
+* ^ = bitwise XOR
+* << (digits to left shift) 
+* \>\> (digits to shift)  
+* ~ = bitwise not
 
-### Converstions
+### Conversions
 * convert a char to a string
 ```cpp
 char c = 'a';
