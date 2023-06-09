@@ -1,6 +1,6 @@
 # Data Structure and Algorithms, C++ Fundamentals
 
-1. Data Structure
+1. Data Structure \
   1.1 Linked List
   - Trees
   - Stack
