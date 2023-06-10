@@ -224,9 +224,34 @@ bool hasCycle(ListNode *head) {
 
 ### :star: Searching - Nuanced Binary Search Analysis
 > Hint
-* why do we do mid = low + (high - low) / 2
+* Sorted nature
+* Want a specific target or a viable element that is closest to the target 
 > Key
-* d 
+* Use mid = low + (high - low) / 2 instead of mid = (high - low) / 2
+  * prevents integer overflow
+  * note that if there are odd number of elements between low and high (inclusive), mid will return the exact middle
+  * if there are even number of elements between low and high, mid will return the mid closer to the low end
+* At the end of the search, the **right** pointer will always be to the left of the **left** pointer
+  * If you want to return the closest target to the left, return the **right** pointer
+    * eg. Increasingly sorted array, if you want to return the biggest element that is **smaller** than target, return the **right** pointer
+  * If you want the closest target to the right, return the **left** pointer
+    * eg. Increasingly sorted array, if you want to return the smallest element that is **bigger** than target, return the left pointer
+```cpp
+int left = .., right = ..;
+while (left <= right){
+  int mid = left + (right - left) / 2;
+  if (satisfyCriteria(mid)){
+    return mid;
+  }
+  else if (){ // val is not large enough
+    left = mid + 1;
+  }
+  else{ // val is too large
+    right = mid - 1;
+  }
+}
+// left pointer will be to the right of the right pointer
+```
 > Problem
 * d  
   
@@ -254,7 +279,7 @@ while (minVal <= maxVal){
     minVal = mid + 1;
   }
   else{ // val is too large
-    minVal = mid - 1;
+    maxVal = mid - 1;
   }
 }
 // consider use case, either return left/right 
