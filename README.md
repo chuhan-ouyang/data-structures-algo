@@ -43,6 +43,7 @@
   #### &emsp; 5.8 Arithmetic
   #### &emsp; 5.9 Bit
   #### &emsp; 5.10 Conversions
+  #### &emsp; 5.10 Correctness Issues
   #### &emsp; 5.11 Others
 
 ### :notebook: 6. Style
@@ -221,14 +222,50 @@ bool hasCycle(ListNode *head) {
 > Problem
 * d  
 
-### :star: Searching  
+### :star: Searching - Nuanced Binary Search Analysis
 > Hint
-* d 
+* why do we do mid = low + (high - low) / 2
 > Key
 * d 
 > Problem
 * d  
+  
+### :star: Searching - Hideen Binary Search
+> Hint
+* No clear structure (dp recurrence formula, greedy rule)
+* Usually tied to array questions
+* Looking for a "best“ solution that meets a certain criteria
+* A finite range of possible solutions: minVal - maxVal
+* For any particular val within minVal - maxVal range, can easily determine whether the val meets the solution criteria
+* **If val meets the criteria, so is all values from minVal - val or val - maxVal, revealing a "sorted" nature**
+> Key
+* Determine the minVal - maxVal range of solution
+* Write a helper to detemrine whether a val yields a viable solution
+* Use binary search to quickly determine a val that meets the criteria, and is also the best val
+  * eg. want the solution that minimizes val
+```cpp
+int minVal = .., maxVal = ..;
+while (minVal <= maxVal){
+  int mid = minVal + (maxVal - minVal) / 2;
+  if (satisfyCriteria(mid)){
+    // mid is likely the best sol to return
+  }
+  else if (){ // val is not large enough
+    minVal = mid + 1;
+  }
+  else{ // val is too large
+    minVal = mid - 1;
+  }
+}
+// consider use case, either return left/right 
 
+bool satisfyCriteria(int val, ...){
+    // return true if val serve as a viable solution
+}
+```
+> Problem
+* [Maximum Value at a Given Index in a Bounded Array](https://leetcode.com/problems/maximum-value-at-a-given-index-in-a-bounded-array/description/)
+* [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
 
 ### :star: Prefix Sum 
 > Hint
@@ -472,6 +509,11 @@ int res = pow(m, n); // m ^ n is bitwise XOR
 ```cpp
 int res = 2 * k; // res = 2k is illegal
 ```
+* use long long int when integer overflow
+```cpp
+long long int a = largeNum, b = largeNum, c = largeNum;
+long long int res = (a + b) * c / 2;
+``` 
 
 ### :star: Bit Manipulations
 * & = bitwise and
@@ -503,6 +545,15 @@ string str(v.begin(), v.end());
 * convert an unordered_set into vector
 ```cpp
 vector<int>(s.begin(), s.end());
+```
+
+### :star: Correctness Issues
+* variable and function should not have the same name
+  * will return: int cannot be used as a function pointer error
+* declared variables must be initialized before used in the future
+```cpp
+int a;
+int b = a + 1; // bad! a can be an undefined value
 ```
 
 ### :star: Other
@@ -541,6 +592,7 @@ int num = A[i++]; // equivalent to: int num = A[i], ++i;
 * multi-declare/init
 ```cpp
 int a = 1, b = 2, c = 3, d;
+int a = 1, b = a + 1, c = a + b; // allowed
 ```
 * use +=, -=, *=, /= whenever possible
 
@@ -561,6 +613,12 @@ int a = 1, b = 2, c = 3, d;
 7. Debug with the full test suite
 8. Document mistakes/ops
 9. Update notes 
+  
+Overall Plan:
+* 1st Pass: carefully take notes on knowledge/correctness/style for leetcode master questions, do daily leetcode (don't sweat about really good performance/style)
+* 2nd Pass: DP Deep Dive, Backtracking Deep Dive, Greedy Deep Dive
+* 3rd Pass: Arrays Deep Dive (Two Pointers, Sliding Window, Prefix Sum)
+* 4th Pass: Only grill on hard questions/timed practices
   
 
 # :pencil: Daily Log
