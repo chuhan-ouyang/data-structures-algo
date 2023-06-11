@@ -57,16 +57,46 @@
 &nbsp;
 > ## :notebook: Section 1: Data Structures
 ### :star: Linked List
+> Usage
+* d
+> Key Ops 
+* d
+ 
 
 ### :star: Trees
+> Usage
+* d
+> Key Ops 
+* d
+ 
 
 ### :star: Stacks
+> Usage
+* d
+> Key Ops 
+* d
+ 
 
 ### :star: Queues
+> Usage
+* d
+> Key Ops 
+* d
+ 
 
 ### :star: Hashset
+> Usage
+* d
+> Key Ops 
+* d
+ 
 
 ### :star: Hashmap
+> Usage
+* d
+> Key Ops 
+* d
+ 
 
 ### :star: Maps (Red-Black Trees)
 > Usage
