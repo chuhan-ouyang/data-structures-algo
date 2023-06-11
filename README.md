@@ -117,7 +117,7 @@
 * d 
 > Key
 * d 
-> Problem
+> Problems
 * d
 
 ### :star: Dynamic Programming
@@ -125,7 +125,7 @@
 * d 
 > Key
 * d 
-> Problem
+> Problems
 * d  
 
 ### :star: Greedy
@@ -133,7 +133,7 @@
 * d 
 > Key
 * d 
-> Problem
+> Problems
 * d  
 
 ### :star: Linked List: Dummy Node
@@ -151,7 +151,7 @@ ListNode* res = dummy->next;
 delete dummy;
 return res;
 ```
-> Problem
+> Problems
 * Most linked list questions
 
 ### :star: Linked List: Two Pointers
@@ -161,9 +161,9 @@ return res;
 > Key
 * Fast usually update with fast->next->next
 * Or fast can skip ahead by n
-> Problem
-* [Remove Nth form End](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
-* [Intersection](https://leetcode.com/problems/intersection-of-two-linked-lists/)
+> Problems
+* [Remove Nth form End](https://leetcode.com/Problemss/remove-nth-node-from-end-of-list/)
+* [Intersection](https://leetcode.com/Problemss/intersection-of-two-linked-lists/)
 
 ### :star: Linked List: Saving Next Pointer
 > Hint
@@ -173,8 +173,8 @@ return res;
 ListNode* next = head->next;
 head->next = whatever;
 ```
-> Problem
-* Most linked list problems
+> Problems
+* Most linked list Problemss
 
 ### :star: Linked List: Cycle Detection
 > Hint
@@ -182,7 +182,7 @@ head->next = whatever;
 > Key
 * slow and fast pointer
 * if there is cycle, then they will intersect when fast has gone a full cycle ahead
-* think: chasing problem
+* think: chasing Problems
 ```cpp
 bool hasCycle(ListNode *head) {
         ListNode* slow = head;
@@ -202,7 +202,7 @@ bool hasCycle(ListNode *head) {
         return false;
     }
 ```
-> Problem
+> Problems
 * Cycle questions
 
 ### :star: Linked List: Cycle Start
@@ -237,15 +237,15 @@ bool hasCycle(ListNode *head) {
         return head;
     }
 ```
-> Problem
-* [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
+> Problems
+* [Linked List Cycle II](https://leetcode.com/Problemss/linked-list-cycle-ii/)
  
 ### :star: Tree  
 > Hint
 * d 
 > Key
 * d 
-> Problem
+> Problems
 * d  
 
 ### :star: Graph 
@@ -253,7 +253,7 @@ bool hasCycle(ListNode *head) {
 * d 
 > Key
 * d 
-> Problem
+> Problems
 * d  
 
 ### :star: Sorting
@@ -261,7 +261,7 @@ bool hasCycle(ListNode *head) {
 * d 
 > Key
 * d 
-> Problem
+> Problems
 * d  
 
 ### :star: Searching - Nuanced Binary Search Analysis
@@ -294,7 +294,7 @@ while (left <= right){
 }
 // left pointer will be to the right of the right pointer
 ```
-> Problem
+> Problems
 * d  
   
 ### :star: Searching - Hideen Binary Search
@@ -330,16 +330,16 @@ bool satisfyCriteria(int val, ...){
     // return true if val serve as a viable solution
 }
 ```
-> Problem
-* [Maximum Value at a Given Index in a Bounded Array](https://leetcode.com/problems/maximum-value-at-a-given-index-in-a-bounded-array/description/)
-* [Koko Eating Bananas](https://leetcode.com/problems/koko-eating-bananas/)
+> Problems
+* [Maximum Value at a Given Index in a Bounded Array](https://leetcode.com/Problemss/maximum-value-at-a-given-index-in-a-bounded-array/description/)
+* [Koko Eating Bananas](https://leetcode.com/Problemss/koko-eating-bananas/)
 
 ### :star: Prefix Sum 
 > Hint
 * d 
 > Key
 * d 
-> Problem
+> Problems
 * d  
 
 ### :star: Sliding Window  
@@ -364,8 +364,8 @@ for (int end = 0; end < A.size(); end++){ // move end ptr in seq
 }
 return res;
 ```
-> Problem
-* [Fruits Into Baskets](https://leetcode.com/problems/fruit-into-baskets/)
+> Problems
+* [Fruits Into Baskets](https://leetcode.com/Problemss/fruit-into-baskets/)
 
 ### :star: Two Pointers: Same Direction
 > Hint
@@ -383,8 +383,8 @@ for (int fast = 0; fast < v.size(); fast++){
 }
 // at the end, slow track how many elements are in the final res
 ```
-> Problem
-* [Remove Element] https://leetcode.com/problems/remove-element/
+> Problems
+* [Remove Element](https://leetcode.com/Problemss/remove-element/)
 
 ### :star: Two Pointers: Opposite Direction
 > Hint
@@ -402,7 +402,7 @@ while (left <= right){
   else --right;
 }
 ```
-> Problem
+> Problems
 
 
 &nbsp;
@@ -413,7 +413,7 @@ while (left <= right){
 * d
 > Key
 * d
-> Problem
+> Problems
 * d
 
 ### :star: In-Place Operations
@@ -422,16 +422,16 @@ while (left <= right){
 * Avoid creating a new string, reduce to O(1) space complexity
 > Key
 * Strings: use reverse(), resize();
-> Problem
-* [Reverse String 2](https://leetcode.com/problems/reverse-string-ii/)
-* [Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/)
+> Problems
+* [Reverse String 2](https://leetcode.com/Problemss/reverse-string-ii/)
+* [Reverse Words in a String](https://leetcode.com/Problemss/reverse-words-in-a-string/)
 
 ### :star: Redundant Computation Elimination
 > Hint
 * d
 > Key
 * d
-> Problem
+> Problems
 * d
 
 ### :star: Redundant Space Elimination
@@ -439,8 +439,8 @@ while (left <= right){
 * Exceed Memory Limit
 > Key
 * Only store changed states
-> Problem
-* [Snapshot Array](https://leetcode.com/problems/snapshot-array/description/)
+> Problems
+* [Snapshot Array](https://leetcode.com/Problemss/snapshot-array/description/)
 
 ### :star: Early Exit
 > Hint
@@ -449,8 +449,8 @@ while (left <= right){
 * Find all elements within a structure that satisfy some condition
 > Key
 * think: if position [x][y] meets a condition, can you infer about whether the surrounding directions (same row, same col, to the left/right/up/down) meet/does not meet this condition?
-> Problem
-* [Count Negative Numbers in a Sorted Matrix](https://leetcode.com/problems/count-negative-numbers-in-a-sorted-matrix/)
+> Problems
+* [Count Negative Numbers in a Sorted Matrix](https://leetcode.com/Problemss/count-negative-numbers-in-a-sorted-matrix/)
 
 ### :star: Negative Indexing
 > Hint
@@ -470,9 +470,9 @@ for (int i = 0; i < v.size(); i++){
   }
 }
 ```
-> Problem
-* [Can Make Arithmetic Progression From Sequence](https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/)
-* [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array/)
+> Problems
+* [Can Make Arithmetic Progression From Sequence](https://leetcode.com/Problemss/can-make-arithmetic-progression-from-sequence/)
+* [Find All Duplicates in an Array](https://leetcode.com/Problemss/find-all-duplicates-in-an-array/)
 
 ### :star: Intersection
 > Hint
@@ -490,8 +490,8 @@ for (int i = 0; i < v.size(); i++){
   }
 }
 ```
-> Problem
-* [Intersection of Two Arrays](https://leetcode.com/problems/intersection-of-two-arrays/)
+> Problems
+* [Intersection of Two Arrays](https://leetcode.com/Problemss/intersection-of-two-arrays/)
  
 &nbsp;
 > ## :notebook: Section 4: Contorl Flow Management
