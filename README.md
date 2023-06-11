@@ -1,6 +1,6 @@
-# :pencil: Data Structure and Algorithms, C++ Fundamentals
+# :pencil: Data Structures and Algorithms, C++ Fundamentals
 
-### :notebook: 1. Data Structure 
+### :notebook: 1. Data Structures
   #### &emsp; 1.1 Linked List 
   #### &emsp; 1.2 Trees     
   #### &emsp; 1.3 Stack
@@ -49,8 +49,9 @@
   #### &emsp; 5.11 Others
 
 ### :notebook: 6. Style
-  #### &emsp; 6.1 Elegance
-  #### &emsp; 6.2 Clarity
+  #### &emsp; 6.1 Optimization
+  #### &emsp; 6.2 Elegance
+  #### &emsp; 6.3 Clarity
 
 ### :notebook: 7. Approach/Mindset
 
@@ -676,7 +677,7 @@ if (b > a) swap(a, b);
 
 &nbsp;
 > ## :notebook: Section 6: Style
-### :star: Op Tips
+### :star: Optimization Tips
 * raw array faster
 ```cpp
 int record[26] = {0};  // instead of vector<int> record(26, 0)
