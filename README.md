@@ -12,7 +12,7 @@
 ### :notebook: 2. Algorithms
   #### &emsp; 2.1 Backtracking(:star::star::star:)
   #### &emsp; 2.2 Dynamic Programming(:star::star::star::star::star:)
-  #### &emsp; 2.3 Greedy(:star::star::star:)
+  #### &emsp; 2.3 Greedy(:star::star::star::star:)
   #### &emsp; 2.4 Graph (Traversal, Min, Cycles)(:star::star:)
   #### &emsp; 2.5 Linked List(:star:)
   #### &emsp; 2.6 Tree(:star:)  
@@ -21,6 +21,8 @@
   #### &emsp; 2.9 Prefix Sum(:star:)
   #### &emsp; 2.10 Sliding Window(:star::star:)
   #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)(:star::star:)
+  #### &emsp; 2.12 KMP
+
 
 ### :notebook: 3. Patterns
   #### &emsp; 3.1 Trading Space/Time
@@ -30,6 +32,7 @@
   #### &emsp; 3.5 Early Exit
   #### &emsp; 3.6 Negative Indexing
   #### &emsp; 3.7 Intersection Detection
+  #### &emsp; 3.8 Other Intuitions
 
 ### :notebook: 4. Contorl Flow Management
   #### &emsp; 4.1 For/While Precise Control(:star::star::star:)
@@ -405,6 +408,53 @@ while (left <= right){
 ```
 > Problems
 
+### :star: KMP
+> Hint
+* Find the matching occurence of a substring in a larger string 
+> Key
+* Traverse the haystack in one loop
+* Use the next/prefix array to know where to try matching again in the needle once an outer pairing fail
+* Reduce time complexity from O(m * n) to O(m) + O(n)
+```cpp
+// populate the prefix array
+void getNext(int* next, const string& s){
+  int j = -1; // track the end of the current prefix
+  next[0] = -1; // init
+  for (int i = 1; i < s.size(); i++){ // track the end of the curr postfix
+    while (j >= 0 && s[j + 1] != s[i]){
+      j = next[j];
+    }
+    if (s[i] == s[j + 1]) ++j;
+    next[i] = j;
+  }
+}
+
+// return position of first occurence of needle in haystack
+int strStr(string haystack, string needle){
+    if (needle.size() == 0){
+        return 0;
+    }
+    int next[needle.size()];
+    getNext(next, needle);
+    int j = -1;
+    for (int i = 0; i < haystack.size(); i++){
+        while (j >= 0 && haystack[i] != needle[j + 1]){
+            j = next[j];
+        }
+        if (haystack[i] == needle[j + 1]){
+            j++;
+        }
+        if (j == needle.size() - 1){
+            return i - needle.size() + 1;
+        }
+    }
+    return -1;
+}
+```
+> Problems
+* [Find the Index of First Occurrence in String](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)
+
+
 
 &nbsp;
 > ## :notebook: Section 3: Patterns
@@ -493,6 +543,9 @@ for (int i = 0; i < v.size(); i++){
 ```
 > Problems
 * [Intersection of Two Arrays](https://leetcode.com/Problemss/intersection-of-two-arrays/)
+
+### :star: Other Intuitions
+* 0-index: the element after the first n elements have the index n
  
 &nbsp;
 > ## :notebook: Section 4: Contorl Flow Management
@@ -682,6 +735,38 @@ if (b > a) swap(a, b);
 ```cpp
 int record[26] = {0};  // instead of vector<int> record(26, 0)
 ```
+* function design
+  * void return, but pass in the actual value to change as a pointer
+    * good for updating an array
+    * pass in the pointer to the array
+    * be careful about agreeing on the size of the raw array in the caller and callee
+```cpp
+// populate the passed in array
+void getRecord(int* rec){
+  for (int i = 0; i < 26; i++){
+    // update rec;
+  }
+}
+int res[26];
+getRecord(res); // pass in the newly created array pointer
+// access updated res
+``` 
+  * void return, but pass in the actual value to change as a reference
+    * good for updating non-raw-array type
+    * pass in the value to update as a ref
+    * will need to init the structure to the correct size in the caller before using the helper function
+```cpp
+// populate the passed in array
+void getRecord(vector<int>& v){
+  for (int i = 0; i < 26; i++){
+    // update rec;
+  }
+}
+vector<int> rec(26, 0);
+getRecord(rec); // pass in the newly created vec by ref
+// access updated rec
+``` 
+  * both allow you to save space by avoiding creating a new copy and returning the copy
 
 ### :star: Elegance Tips
 * return newly constructed value in the return statement
