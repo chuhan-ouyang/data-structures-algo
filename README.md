@@ -7,6 +7,7 @@
   #### &emsp; 1.4 Queues
   #### &emsp; 1.5 Hashset
   #### &emsp; 1.6 Hashmaps
+  #### &emsp; 1.7 Map (Red-Black Trees)
 
 ### :notebook: 2. Algorithms
   #### &emsp; 2.1 Backtracking(:star::star::star:)
@@ -25,9 +26,10 @@
   #### &emsp; 3.1 Trading Space/Time
   #### &emsp; 3.2 In-Place Operations
   #### &emsp; 3.3 Redundant Computation Elimination
-  #### &emsp; 3.4 Early Exit
-  #### &emsp; 3.5 Negative Indexing
-  #### &emsp; 3.6 Intersection Detection
+  #### &emsp; 3.4 Redundant Space Elimination
+  #### &emsp; 3.5 Early Exit
+  #### &emsp; 3.6 Negative Indexing
+  #### &emsp; 3.7 Intersection Detection
 
 ### :notebook: 4. Contorl Flow Management
   #### &emsp; 4.1 For/While Precise Control(:star::star::star:)
@@ -66,6 +68,16 @@
 
 ### :star: Hashmap
 
+### :star: Maps (Red-Black Trees)
+> Usage
+* Sorted order (eg. time sequence), and such order has a significant meaning
+* Quickly support lower/upper bound usage (*not exact* usages)
+  * Eg. Find the smallest element that is greater than target
+  * If you are just trying to find an exact element, you can just use unordered_map
+> Key Ops 
+* Put O(logn)
+* Get O(logn)
+ 
 
 &nbsp;
 > ## :notebook: Section 2: Algorithms
@@ -392,6 +404,14 @@ while (left <= right){
 > Problem
 * d
 
+### :star: Redundant Space Elimination
+> Hint
+* Exceed Memory Limit
+> Key
+* Only store changed states
+> Problem
+* [Snapshot Array](https://leetcode.com/problems/snapshot-array/description/)
+
 ### :star: Early Exit
 > Hint
 * Original structure has (partial) sorted properties
@@ -467,6 +487,14 @@ reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
 int maxVal = *max_element(v.begin(), v.end()), minVal = *min_element(v.begin(), v.end());
 reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
 ```
+* constructor to make vector of size n fill with default content
+  * invoked as vector<type>(size, defaultContent)
+```cpp
+vector<int> v;
+v(10, 0); // illegal: does not explicitly use vector constructor
+v = vector<int>(10, 0); // ok
+```
+
 
 ### :star: Hashset Library
 * iterate through hashset
@@ -478,14 +506,24 @@ for (const auto& num: m){
 string s = "abcde";
 ```
 
-### :star: Hashmap Library
-* iterate through hashmap
+### :star: Map Library (Red-Black Tree)
+* lower_bound(k) return an iterator for element at k, or if k doesn't exist, return the smallest elem greater than k
+* upper_bound(k) return an iterator pointing to the smalelst elem greater than k
+  * lower_bound(k) and upper_bound(k) have the same behavior when k does not exist
+    * both return the smallest element greater than k
+  * if k is found, lower_bound(k) will return elem that is exactly k, but upper_bound(k) will still return the smallest elem that is greater than k
+
 ```cpp
-unordered_map<int, int> m;
-for (const auto& pair: m){
-  cout << pair.first << ": " << pair.second << endl;
-}
-string s = "abcde";
+    std::map<int, int> m{{1,1}, {2, 2}, {3, 3}, {5, 5}, {6, 6}};
+    auto itr = m.lower_bound(4);
+    std::cout << (*itr).first << std::endl; // smallest elem greater than 4
+    itr = m.upper_bound(4); 
+    std::cout << (*itr).first << std::endl; // smallest elem greater than 4
+    
+    itr = m.lower_bound(3);
+    std::cout << (*itr).first << std::endl; // 3 is found
+    itr = m.upper_bound(3);
+    std::cout << (*itr).first << std::endl; // still return smallest elem greater than 3
 ```
 
 ### :star: Stack Library
@@ -580,6 +618,21 @@ vector<int>(s.begin(), s.end());
 int a;
 int b = a + 1; // bad! a can be an undefined value
 ```
+* when dealing with a vector of nested data structures, be carefulthat if you want to retrive that 
+inner data structure, you must do a vector access
+```cpp
+vector<map<int, int>> maps; // a vector of map
+maps.find(5); // illegal! 
+maps[0].find(5); // legal: each elem is a map
+```
+* must use parenthesis to force dereference a pointer before accessing its value
+```cpp
+auto itr;
+*itr.second; // illegal！
+(*itr).second; // ok!
+(*(--itr)).second; // correct way to dec the ptr, deref, and access second
+```
+
 
 ### :star: Other
 * always want var a to be larger than b
@@ -644,6 +697,7 @@ Overall Plan:
 * 2nd Pass: DP Deep Dive, Backtracking Deep Dive, Greedy Deep Dive
 * 3rd Pass: Arrays Deep Dive (Two Pointers, Sliding Window, Prefix Sum)
 * 4th Pass: Only grill on hard questions/timed practices
+* 5th Pass: Object-Oriented Design Questions
   
 
 # :pencil: Daily Log
