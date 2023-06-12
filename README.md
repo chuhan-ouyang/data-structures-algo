@@ -573,7 +573,8 @@ for (int i = 0; i < v.size(); i++){
 reverse(v.begin() + i, v.begin() + k + 1); // reverse ith to kth
 reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
 ```
-* s.substr(start, length)
+* s.substr(start, length) 
+  * default to using integers as index (not iterators)
   * starting from start, take length
   * think: s.substr(startIndex, endIndex - startIndex + 1)
 * s.substr(start) 
@@ -629,11 +630,52 @@ str.replace(9, 5, str2); // "n test" replaced with "n example"
 string str("Needles inside Needles");
 auto found = str.find("Needles");
 if (found != string::npos){ // must include npos check!
-  std::cout << found << std::endl; 
+  std::cout << found << std::endl; // note that npos corresponds to size_t (can think of as int in this case)
 }
 found = str.find("Needles", found + 1); // find the next occurrence by simply adding 1 to previous res
 ```
-* TODO: remove trailing and starting white spaces
+*s.find_first_of("sequence of chars", startPos) return the first occurrence of any letter in the sequence of chars starting form the startPos
+```cpp
+string str("Replace all vowels");
+int found = str.find_first_of("aeiouu");
+while (found != string::npos){
+  std[found] = "*";
+  found = str.find_first_of("aeiou", found + 1);
+}
+```
+*s.find_first_not_of("seq of chars", startPos) return the first occurrence of a letter that is not in the seq of chras starting from the startPos
+```cpp
+string str("   find first non space");
+int found = str.find_first_not_of(" \t\f\v\n\r");
+```
+* s.find_last_of("seq of chars", endingPos) return the last occurrence of anything in the seq of character **at or before** the endingPos
+```cpp
+std::string str("/user/bin/man");
+int found = str.find_last_of("/");
+if (found != std::string::npos){
+  std::cout << "file name: " << str.substr(found + 1); // man
+}
+```
+* s.find_last_not_of("seq of chars", endingPos) return the last occurrence of anything not in the seq of character **at or before** the endingPos
+```cpp
+std::string str("remove trailing spaces  ");
+int found = str.find_last_not_of(" \t\f\v\n\r");
+if (found != string::npos){
+  str.erase(found + 1);
+}
+```
+* remove all leading and trailing spaces
+```cpp
+std::string trim(const std::string& str){
+    std::string whitespaces(" \t\f\v\n\r");
+    const auto strBegin = str.find_first_not_of(whitespaces);
+    if (strBegin == std::string::npos){
+        return "";
+    }
+    const auto strEnd = str.find_last_not_of(whitespaces);
+    return str.substr(strBegin, strEnd - strBegin + 1);
+}
+```
 
 ### :star: Vector Library
 * find max/min
