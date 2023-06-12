@@ -50,6 +50,7 @@
   #### &emsp; 5.10 Conversions
   #### &emsp; 5.10 Correctness Issues
   #### &emsp; 5.11 Others
+  #### &emsp; 5.12 Utils
 
 ### :notebook: 6. Style
   #### &emsp; 6.1 Optimization
@@ -125,6 +126,15 @@
 * d
 
 ### :star: Dynamic Programming
+> General Approach
+1. Decide the dimension of the DP array and its meaning
+2. Come up with the recurrence formula
+3. Initialize the DP array
+4. Decide the order of traversal
+5. Test the above by filling an example DP
+6. Always print the array for debugging
+> Focus: Subproblems, Inferring current state from previous states
+
 > Hint
 * d 
 > Key
@@ -838,11 +848,17 @@ while (x){ // illegal way to specify keep going as long as x > 0
 ```
 
 
-### :star: Other
+### :star: Others
 * always want var a to be larger than b
 ```cpp
 if (b > a) swap(a, b);
 ```
+* covering range [-n, n] need (2n + 1) elements
+* array index misalignment
+  * eg. if use index i to represent to represent sequence (ith + 1), must access arr using A[seq - 1]
+
+### :star: Other
+* print vector (1D/2D)
 * covering range [-n, n] need (2n + 1) elements
 * array index misalignment
   * eg. if use index i to represent to represent sequence (ith + 1), must access arr using A[seq - 1]
@@ -941,4 +957,4 @@ Overall Plan:
 * 6/6: can_make_arith, find_dup, flip_bits (3)
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
 * 6/8: longest arith seq, three sum, bsearch, reverse string 1, reverse string 2 (5)
-* 6/9: reverse words
+* 6/12: finish KMP, another KMP problem, string library summary
