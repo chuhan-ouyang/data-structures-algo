@@ -413,10 +413,16 @@ while (left <= right){
 * Find the matching occurence of a substring in a larger string 
 > Key
 * Traverse the haystack in one loop
-* Use the next/prefix array to know where to try matching again in the needle once an outer pairing fail
+* Use the next/prefix array to know where to try matching again in the needle once an outer 
+pairing fail
+  * Prefix = substring that **must contain first letter** and **must not contain last letter**
+    * think: traverse from the front to the back
+  * Postfix = substring that **must not contain the first letter** and **must end with the last letter**
+    * think: traverse from the back to the front
 * Reduce time complexity from O(m * n) to O(m) + O(n)
 ```cpp
 // populate the prefix array
+// 每个element都减一，并且左移
 void getNext(int* next, const string& s){
   int j = -1; // track the end of the current prefix
   next[0] = -1; // init
@@ -438,6 +444,7 @@ int strStr(string haystack, string needle){
     getNext(next, needle);
     int j = -1;
     for (int i = 0; i < haystack.size(); i++){
+      // next[j] contorls the j + 1's element in the needle
         while (j >= 0 && haystack[i] != needle[j + 1]){
             j = next[j];
         }
@@ -715,6 +722,14 @@ auto itr;
 *itr.second; // illegal！
 (*itr).second; // ok!
 (*(--itr)).second; // correct way to dec the ptr, deref, and access second
+```
+* if you want a while loop to keep going if something is positive, specify while (x > 0)
+```cpp
+int x = -10;
+while (x){ // illegal way to specify keep going as long as x > 0
+// will be in the loop even if x is negative
+// only use while(x) if you should proceed when x is either positive/negative
+}
 ```
 
 
