@@ -573,7 +573,62 @@ for (int i = 0; i < v.size(); i++){
 reverse(v.begin() + i, v.begin() + k + 1); // reverse ith to kth
 reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
 ```
+* s.substr(start, length)
+  * starting from start, take length
+  * think: s.substr(startIndex, endIndex - startIndex + 1)
+* s.substr(start) 
+  * take from start til the end
+  * iterator allowed
+```cpp
+std::string str("This is an example sentence.");
+std::cout << str.substr(5, 6 - 5 + 1) << std::endl; // is
+std::string str("This is an example sentence.");
+std::cout << str.substr(str.find("example")) << std::endl; // example sentence
+```
+```cpp
+reverse(v.begin() + i, v.begin() + k + 1); // reverse ith to kth
+reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
+```
 * be careful about using insert(), erase() operations in a for loop, these are O(n) operations, making the overall time complexity O(n<sup>2</sup>)
+* resize(lenght, defaultChar)
+  * useful when knowing the final return size so resize first
+```cpp
+string s = "wesdf";
+s.resize(s.size() * 2);
+s.resize(s.size() * 2, 'a');
+```
+* += safely use with another string, single char, or char*
+* s.insert(pos, subString) 
+```cpp
+string s = "to be question";
+string s2 = "the ";
+s.insert(6, s2); // to be the question
+// starting from pos
+```
+* s.erase(start, len), s.erase（iter), s.erase(startIter, endIter)
+  * for start and end, it is [) range
+```cpp
+string str("This is an example sentence.");
+str.erase(10, 8); // This is an sentence
+str.erase(str.begin() + 9); // This is a ssentence
+str.erase(str.begin() + 5, str.end() - 9); // This sentence
+```
+* s.replace(start, len, newString)
+  * replace from start for len amount of the original string by the new string
+```cpp
+string str("This is an test sentence.");
+string str2 = "n example";
+str.replace(9, 5, str2); // "n test" replaced with "n example"
+```
+* s.find(subStr, startPos) return the first position of the subStr found at or after startPos
+```cpp
+string str("Needles inside Needles");
+auto found = str.find("Needles");
+if (found != string::npos){ // must include npos check!
+  std::cout << found << std::endl; 
+}
+found = str.find("Needles", found + 1); // find the next occurrence by simply adding 1 to previous res
+```
 
 ### :star: Vector Library
 * find max/min
