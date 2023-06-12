@@ -634,7 +634,7 @@ if (found != string::npos){ // must include npos check!
 }
 found = str.find("Needles", found + 1); // find the next occurrence by simply adding 1 to previous res
 ```
-*s.find_first_of("sequence of chars", startPos) return the first occurrence of any letter in the sequence of chars starting form the startPos
+* s.find_first_of("sequence of chars", startPos) return the first occurrence of any letter in the sequence of chars starting form the startPos
 ```cpp
 string str("Replace all vowels");
 int found = str.find_first_of("aeiouu");
@@ -643,7 +643,7 @@ while (found != string::npos){
   found = str.find_first_of("aeiou", found + 1);
 }
 ```
-*s.find_first_not_of("seq of chars", startPos) return the first occurrence of a letter that is not in the seq of chras starting from the startPos
+* s.find_first_not_of("seq of chars", startPos) return the first occurrence of a letter that is not in the seq of chras starting from the startPos
 ```cpp
 string str("   find first non space");
 int found = str.find_first_not_of(" \t\f\v\n\r");
