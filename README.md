@@ -605,12 +605,14 @@ string s2 = "the ";
 s.insert(6, s2); // to be the question
 // starting from pos
 ```
-* s.erase(start, len), s.erase（iter), s.erase(startIter, endIter)
+* s.erase(start, len), s.erase(start), s.erase（iter), s.erase(startIter, endIter)
   * for start and end, it is [) range
+  * for the single start element, remove everything at and after start
+  * for the single iter argument, you remove exactly that element
 ```cpp
 string str("This is an example sentence.");
 str.erase(10, 8); // This is an sentence
-str.erase(str.begin() + 9); // This is a ssentence
+str.erase(str.begin() + 9); // This is a semtence
 str.erase(str.begin() + 5, str.end() - 9); // This sentence
 ```
 * s.replace(start, len, newString)
@@ -621,6 +623,8 @@ string str2 = "n example";
 str.replace(9, 5, str2); // "n test" replaced with "n example"
 ```
 * s.find(subStr, startPos) return the first position of the subStr found at or after startPos
+  * find return an integer value (not an iterator)
+  * technically a size_t but you can write it as the integer type
 ```cpp
 string str("Needles inside Needles");
 auto found = str.find("Needles");
@@ -629,6 +633,7 @@ if (found != string::npos){ // must include npos check!
 }
 found = str.find("Needles", found + 1); // find the next occurrence by simply adding 1 to previous res
 ```
+* TODO: remove trailing and starting white spaces
 
 ### :star: Vector Library
 * find max/min
