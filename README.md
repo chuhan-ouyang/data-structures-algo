@@ -301,7 +301,7 @@ while (left <= right){
 > Problems
 * d  
   
-### :star: Searching - Hideen Binary Search
+### :star: Searching - Hidden Binary Search
 > Hint
 * No clear structure (dp recurrence formula, greedy rule)
 * Usually tied to array questions
@@ -461,6 +461,7 @@ int strStr(string haystack, string needle){
 ```
 > Problems
 * [Find the Index of First Occurrence in String](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)
+* [Repeated Substring Pattern](https://leetcode.cn/problems/repeated-substring-pattern/)
 
 
 
