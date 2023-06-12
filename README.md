@@ -349,7 +349,7 @@ bool satisfyCriteria(int val, ...){
 ### :star: Sliding Window  
 > Hint
 * Find min/max length of some window
-* Reduce from O(n<sup>2) to O(n) time complexity
+* Reduce from O(n<sup>2</sup>) to O(n) time complexity
 > Key
 * For loop iterate through all possible **end** of the window in sequence
   * Update the running state when appending a new **end** element
@@ -410,6 +410,7 @@ while (left <= right){
 
 ### :star: KMP
 > Hint
+* Match two strings, once you detect a mistmatch of individual letters, use *saved matched work* to avoid rematching completely again
 * Find the matching occurence of a substring in a larger string 
 > Key
 * Traverse the haystack in one loop
@@ -571,6 +572,7 @@ for (int i = 0; i < v.size(); i++){
 reverse(v.begin() + i, v.begin() + k + 1); // reverse ith to kth
 reverse(v.begin() + i, v.begin() + i + k);  // reverse ith for a length of k
 ```
+* be careful about using insert(), erase() operations in a for loop, these are O(n) operations, making the overall time complexity O(n<sup>2</sup>)
 
 ### :star: Vector Library
 * find max/min
