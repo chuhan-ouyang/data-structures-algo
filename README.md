@@ -36,7 +36,7 @@
 
 ### :notebook: 4. Contorl Flow Management
   #### &emsp; 4.1 If Control (Bounds Checking)
-  #### &emsp; 4.1 For/While Precise Control(:star::star::star:)
+  #### &emsp; 4.2 For/While Precise Control(:star::star::star:)
 
 ### :notebook: 5. C++ Fundamentals
   #### &emsp; 5.1 String
@@ -129,6 +129,7 @@
 * d
 
 ### :star: Dynamic Programming
+Just Think: Do I need to rely on previous states?
 > General Approach
 1. Decide the dimension of the DP array and its meaning
 2. Come up with the recurrence formula
@@ -585,8 +586,14 @@ for (int i = 0; i < v.size(); i++){
 
 ### :star: For/While Precise Control
 * replace for loop
-* TODO: cool
-
+* iterate through all possible pairs that sum to n
+  * **<= n/2**, works for both even and odds
+```cpp
+for (int i = 1; i <= n / 2; i++){
+  std::cout << i << "," << n - i << std::endl;
+}
+```
+* TODO: nested loop caution
 
 &nbsp;
 > ## :notebook: Section 5: C++ Fundamentals
@@ -958,6 +965,13 @@ if (i == 1) return 1; // not op
 if (i == 0 || i == 1) return i; // ok op
 if (i <= 1) return i; // very op
 ``` 
+* updating an already existing structure to the max throughout a for loop: can avoid creating a temp and assigning temp to max; modify the structure directly
+```cpp
+dp[0]; // want to change this to the max
+for (int i = 0; i < n; i++){
+  dp[0] = max(dp[0], max(i * (n - i), i * dp[n - i]));
+}
+``` 
 
 
 ### :star: Elegance Tips
@@ -1013,4 +1027,4 @@ Overall Plan:
 * 6/6: can_make_arith, find_dup, flip_bits (3)
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
 * 6/8: longest arith seq, three sum, bsearch, reverse string 1, reverse string 2 (5)
-* 6/12: finish KMP, another KMP problem, string library summary, dp basics review, fib, stairs, stairs with cost, min paths
+* 6/12: finish KMP, another KMP problem, string library summary, dp basics review, fib, stairs, stairs with cost, min paths, min cost path 2, integer break
