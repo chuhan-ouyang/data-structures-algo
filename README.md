@@ -710,9 +710,20 @@ vector<int> v;
 v(10, 0); // illegal: does not explicitly use vector constructor
 v = vector<int>(10, 0); // ok
 ```
+* emplace_back vs. push_back
+  * push_back(x): content of x is copied/moved to the new element
+    * call constructor to create a temporary object
+    * construct a copy of the temporary object in the memory of the container
+    * if the move constructor exist, call the move constructor (since the temporary object is rvalue)
+    * otherwise call the copy constructor
+    * call destructor to destroy the temporary object after copy
+  * emplace_back(x): the new element is constructed in place using x as the argument for its constructor
+    * directly takes constructor argument
+    * avoids constructing/destructing temporary object
+    * very efficient when inserting large amount of objects or each object is time-consuing to create/destroy
 
 
-### :star: Hashset Library
+### :star: Hashset(Unordered_Set) Library
 * iterate through hashset
 ```cpp
 unordered_set<int> m;
@@ -721,6 +732,7 @@ for (const auto& num: m){
 }
 string s = "abcde";
 ```
+* s.count(num), will return 1 or 0
 
 ### :star: Set Library
 * iterate through hashset
@@ -736,6 +748,7 @@ string s = "abcde";
 unordered_set<vector<int>> s; // illegal!
 set<vector<int>> s; // ok
 ```
+* s.insert(elem), s.erase(elem)
 
 ### :star: Map Library (Red-Black Tree)
 * good for strange keys like vector<int>, or pair<int, int>
