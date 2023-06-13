@@ -35,6 +35,7 @@
   #### &emsp; 3.8 Other Intuitions
 
 ### :notebook: 4. Contorl Flow Management
+  #### &emsp; 4.1 If Control (Bounds Checking)
   #### &emsp; 4.1 For/While Precise Control(:star::star::star:)
 
 ### :notebook: 5. C++ Fundamentals
@@ -139,7 +140,8 @@
 ```cpp
 // edge cases
 // init dp array to correct dimension
-// for loop traverse
+// init values
+// for loop traverse, be careful about bounds!
 // final return
 ```
 > Focus: Subproblems, Inferring current state from previous states
@@ -578,9 +580,12 @@ for (int i = 0; i < v.size(); i++){
  
 &nbsp;
 > ## :notebook: Section 4: Contorl Flow Management
+### :star: If Control (Bounds Checking)
+* replace for loop
 
 ### :star: For/While Precise Control
 * replace for loop
+* TODO: cool
 
 
 &nbsp;
@@ -1008,4 +1013,4 @@ Overall Plan:
 * 6/6: can_make_arith, find_dup, flip_bits (3)
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
 * 6/8: longest arith seq, three sum, bsearch, reverse string 1, reverse string 2 (5)
-* 6/12: finish KMP, another KMP problem, string library summary, dp basics review, fib, stairs, stairs with cost, 
+* 6/12: finish KMP, another KMP problem, string library summary, dp basics review, fib, stairs, stairs with cost, min paths
