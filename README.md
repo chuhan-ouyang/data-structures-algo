@@ -37,20 +37,22 @@
 ### :notebook: 4. Contorl Flow Management
   #### &emsp; 4.1 For/While Precise Control(:star::star::star:)
 
-### :notebook: 5. C++ Familiarity
+### :notebook: 5. C++ Fundamentals
   #### &emsp; 5.1 String
   #### &emsp; 5.2 Vector
   #### &emsp; 5.3 Hashset
-  #### &emsp; 5.4 Hashmap
-  #### &emsp; 5.5 Stack
-  #### &emsp; 5.6 Queue
-  #### &emsp; 5.7 Priority Queue
-  #### &emsp; 5.8 Arithmetic
-  #### &emsp; 5.9 Bit
-  #### &emsp; 5.10 Conversions
-  #### &emsp; 5.10 Correctness Issues
-  #### &emsp; 5.11 Others
-  #### &emsp; 5.12 Utils
+  #### &emsp; 5.4 Set
+  #### &emsp; 5.5 Hashmap
+  #### &emsp; 5.6 Map
+  #### &emsp; 5.7 Stack
+  #### &emsp; 5.8 Queue
+  #### &emsp; 5.9 Priority Queue
+  #### &emsp; 5.10 Arithmetic
+  #### &emsp; 5.11 Bit
+  #### &emsp; 5.12 Conversions
+  #### &emsp; 5.13 Correctness Issues
+  #### &emsp; 5.14 Others
+  #### &emsp; 5.15 Utils
 
 ### :notebook: 6. Style
   #### &emsp; 6.1 Optimization
@@ -133,12 +135,20 @@
 4. Decide the order of traversal
 5. Test the above by filling an example DP
 6. Always print the array for debugging
+> Code 
+```cpp
+// edge cases
+// init dp array to correct dimension
+// for loop traverse
+// final return
+```
 > Focus: Subproblems, Inferring current state from previous states
 
 > Hint
 * d 
 > Key
-* d 
+* If you want dp[n] to represents the state at the nth index, and your array is 0-indexed, will end up needing dp[0], dp[1]...dp[n], for a total of (n + 1) elements
+  * Oftentimes, the loop for involve for (int i = init; i **<=** n; i++), reflecting the n + 1 elements
 > Problems
 * d  
 
@@ -712,7 +722,27 @@ for (const auto& num: m){
 string s = "abcde";
 ```
 
+### :star: Set Library
+* iterate through hashset
+```cpp
+unordered_set<int> m;
+for (const auto& num: m){
+  cout << num << endl;
+}
+string s = "abcde";
+```
+* good for strange keys like vector<int>, or pair<int, int>
+```cpp
+unordered_set<vector<int>> s; // illegal!
+set<vector<int>> s; // ok
+```
+
 ### :star: Map Library (Red-Black Tree)
+* good for strange keys like vector<int>, or pair<int, int>
+```cpp
+unordered_map<vector<int>, int> m; // illegal!
+map<vector<int>, int> m; // ok
+```
 * lower_bound(k) return an iterator for element at k, or if k doesn't exist, return the smallest elem greater than k
 * upper_bound(k) return an iterator pointing to the smalelst elem greater than k
   * lower_bound(k) and upper_bound(k) have the same behavior when k does not exist
@@ -720,16 +750,16 @@ string s = "abcde";
   * if k is found, lower_bound(k) will return elem that is exactly k, but upper_bound(k) will still return the smallest elem that is greater than k
 
 ```cpp
-    std::map<int, int> m{{1,1}, {2, 2}, {3, 3}, {5, 5}, {6, 6}};
-    auto itr = m.lower_bound(4);
-    std::cout << (*itr).first << std::endl; // smallest elem greater than 4
-    itr = m.upper_bound(4); 
-    std::cout << (*itr).first << std::endl; // smallest elem greater than 4
-    
-    itr = m.lower_bound(3);
-    std::cout << (*itr).first << std::endl; // 3 is found
-    itr = m.upper_bound(3);
-    std::cout << (*itr).first << std::endl; // still return smallest elem greater than 3
+std::map<int, int> m{{1,1}, {2, 2}, {3, 3}, {5, 5}, {6, 6}};
+auto itr = m.lower_bound(4);
+std::cout << (*itr).first << std::endl; // smallest elem greater than 4
+itr = m.upper_bound(4); 
+std::cout << (*itr).first << std::endl; // smallest elem greater than 4
+
+itr = m.lower_bound(3);
+std::cout << (*itr).first << std::endl; // 3 is found
+itr = m.upper_bound(3);
+std::cout << (*itr).first << std::endl; // still return smallest elem greater than 3
 ```
 
 ### :star: Stack Library
@@ -857,7 +887,7 @@ if (b > a) swap(a, b);
 * array index misalignment
   * eg. if use index i to represent to represent sequence (ith + 1), must access arr using A[seq - 1]
 
-### :star: Other
+### :star: Utils
 * print vector (1D/2D)
 * covering range [-n, n] need (2n + 1) elements
 * array index misalignment
@@ -903,6 +933,14 @@ getRecord(rec); // pass in the newly created vec by ref
 // access updated rec
 ``` 
   * both allow you to save space by avoiding creating a new copy and returning the copy
+* Congregate if conditions, combine multiple conditions if their resulting actions is the same/can be generalized
+```cpp
+if (i == 0) return 0;
+if (i == 1) return 1; // not op
+if (i == 0 || i == 1) return i; // ok op
+if (i <= 1) return i; // very op
+``` 
+
 
 ### :star: Elegance Tips
 * return newly constructed value in the return statement
@@ -957,4 +995,4 @@ Overall Plan:
 * 6/6: can_make_arith, find_dup, flip_bits (3)
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
 * 6/8: longest arith seq, three sum, bsearch, reverse string 1, reverse string 2 (5)
-* 6/12: finish KMP, another KMP problem, string library summary
+* 6/12: finish KMP, another KMP problem, string library summary, dp basics review, fib, stairs, stairs with cost, 
