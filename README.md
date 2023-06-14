@@ -149,13 +149,52 @@ Just Think: Do I need to rely on previous states?
 ```
 > Focus: Subproblems, Inferring current state from previous states
 
+### :star: Dynamic Programming - 1D Basics
 > Hint
-* d 
+* Rely on some or all of previous states
+* Linear sequence eof states
 > Key
-* If you want dp[n] to represents the state at the nth index, and your array is 0-indexed, will end up needing dp[0], dp[1]...dp[n], for a total of (n + 1) elements
-  * Oftentimes, the loop for involve for (int i = init; i **<=** n; i++), reflecting the n + 1 elements
+* Need dp arra pf size n + 1
+  * If you want dp[n] to represents the state at the nth index, and your array is 0-indexed, will end up needing dp[0], dp[1]...dp[n], for a total of (n + 1) elements
+* Recurrence formula require to update dp[n] require reading from some dp states for numbers smaller than n
+* May require traversing through all of dp[1] ... dp[n - 1] in order to infer th state of dp[n]
+```cpp
+vector<int> dp(n + 1, 0);
+// defualt initializatoin
+for (int i = 1; i <= n; i++){
+  dp[n] = // previous dp simple calculation;
+  for (int j = 1; j < i; j++){
+    dp[n] = max(dp[n], dp[j]) // other calculation with dp[j];
+  }
+}
+return dp[n]; // the last element
+```
 > Problems
-* d  
+* [Integer Break](https://leetcode.com/problems/integer-break/)
+* [Unique Binary Search Trees](https://leetcode.com/problems/unique-binary-search-trees/)
+
+### :star: Dynamic Programming - 2D Basics
+> Hint
+* Rely on some or all of previous sates
+* "Rectangular" sequence of states
+> Key
+* dp[r][c] rel on dp of different rows and columns
+```cpp
+vector<int> dp(n + 1, 0);
+// create dp array
+vector<vector<int>> dp(rows, vector<int>(cols, 0));
+// intialization
+for (int i = 0; i < rows; i++) // init first col, be careful!
+for (int j = 0; j < cols; j++) // init first row, be careful!
+for (int i = 0; i < rows; i++){
+  for (int j = 0; j < cols; j++){
+    dp[i][j] = .. // previous states
+  }
+}
+return dp[rows - 1][cols - 1]; // last element
+```
+> Problems
+* [Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)
 
 ### :star: Greedy
 > Hint
