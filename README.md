@@ -136,8 +136,8 @@ Just Think: Do I need to rely on previous states?
 > General Approach
 1. Decide the dimension of the DP array and its meaning
 2. Come up with the recurrence formula
-3. Initialize the DP array
-4. Decide the order of traversal
+3. Initialize the DP array (must align with dp meaning and traversal)
+4. Decide the order of traversal (must align with init and recurrence formula, no out of bounds/uninitialized array access)
 5. Test the above by filling an example DP
 6. Always print the array for debugging
 > Code 
@@ -232,8 +232,19 @@ for (int i = 1; i < n; i++){
     }
   }
 }
-
 return dp[n - 1][w];
+```
+* Alternative: only use one row 
+  * Key difference: align traversal order to traverse from the end to the front so you read *last row*'s value instead of the overwritten *current row* value
+```cpp
+// size: n (for number of objects/selections) * (w  + 1) to consider the case when w = 0
+vector<int> dp(w + 1, 0); // initialization to all 0
+for (int i = 0; i < n; i++){
+  for (int j = w; j >= w[i]; j--){
+    dp[j] = max(dp[j], dp[j - w[i]] + v[i]);
+  }
+}
+return dp[w];
 ```
 > Problems
 * d  
