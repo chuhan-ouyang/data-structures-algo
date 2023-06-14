@@ -32,7 +32,8 @@
   #### &emsp; 3.5 Early Exit
   #### &emsp; 3.6 Negative Indexing
   #### &emsp; 3.7 Intersection Detection
-  #### &emsp; 3.8 Other Intuitions
+  #### &emsp; 3.8 Avoid Repetition
+  #### &emsp; 3.9 Other Intuitions
 
 ### :notebook: 4. Contorl Flow Management
   #### &emsp; 4.1 If Control (Bounds Checking)
@@ -179,6 +180,9 @@ return dp[n]; // the last element
 * "Rectangular" sequence of states
 > Key
 * dp[r][c] rel on dp of different rows and columns
+* Both dimension of the dp array represnt a position of the prevoius solution
+  * Whereas in Knapsack, one dimension represents a posiiton-independent value, such as the weight constraint
+* 2D dp array (if traversing from left to right, up to down), often involves initializng the first row and the first column
 ```cpp
 vector<int> dp(n + 1, 0);
 // create dp array
@@ -195,6 +199,46 @@ return dp[rows - 1][cols - 1]; // last element
 ```
 > Problems
 * [Unique Paths II](https://leetcode.com/problems/unique-paths-ii/)
+
+### :star: Dynamic Programming - Knapsack: 0/1
+> Hint
+* Maximize with some constraints
+* A range of items to choose from/move
+* Choose 0/1 to indicate whether to include the item in the optimal solution
+> Key
+* Subproblem depends both on prevoius items (linear sequence) and also sub-probems with different constraints, forming a rectangular sequence
+* O(nw), where n is the sequence of items, and w is the sequence (linear) of constraints
+* Be really careful about the meaning of dp[r][c], the initialization, and the order of traversal
+```cpp
+// size: n (for number of objects/selections) * (w  + 1) to consider the case when w = 0
+vector<vector<int>> dp(n, vector<int>(w + 1, 0));
+
+// init first column
+for (int i = 0; i < n; i++){
+  dp[i][0] = 0; // when weight is 0, cannot carry any item so the vlaue is 0
+}
+
+// init first row
+for (int j = w[0]; j <= w; j++){ // notice <= w
+  dp[0][j] = value[0]; // for all plausible weight, the value will be the value of the first item
+}
+
+for (int i = 1; i < n; i++){
+  for (int j = 0; j <= w; j++){
+    if (j < weigt[i]) dp[i][j] = dp[i - 1][j]; // important to avoid bounds issues
+    // if the current weight (allowance) doesn't even fit this item, then relinquish putting in this item
+    else{
+      dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - weight[i]] + value[i]);
+    }
+  }
+}
+
+return dp[n - 1][w];
+```
+> Problems
+* d  
+
+### :star: Dynamic Programming - Knapsacl: Complete
 
 ### :star: Greedy
 > Hint
@@ -616,6 +660,9 @@ for (int i = 0; i < v.size(); i++){
 ```
 > Problems
 * [Intersection of Two Arrays](https://leetcode.com/Problemss/intersection-of-two-arrays/)
+
+### :star: Avoid Repetitions
+* 0-index: the element after the first n elements have the index n
 
 ### :star: Other Intuitions
 * 0-index: the element after the first n elements have the index n
