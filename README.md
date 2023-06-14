@@ -51,9 +51,11 @@
   #### &emsp; 5.10 Arithmetic
   #### &emsp; 5.11 Bit
   #### &emsp; 5.12 Conversions
-  #### &emsp; 5.13 Correctness Issues
-  #### &emsp; 5.14 Others
-  #### &emsp; 5.15 Utils
+  #### &emsp; 5.13 Struct
+  #### &emsp; 5.14 Classes
+  #### &emsp; 5.15 Correctness Issues
+  #### &emsp; 5.16 Others
+  #### &emsp; 5.17 Utils
 
 ### :notebook: 6. Style
   #### &emsp; 6.1 Optimization
@@ -586,14 +588,7 @@ for (int i = 0; i < v.size(); i++){
 
 ### :star: For/While Precise Control
 * replace for loop
-* iterate through all possible pairs that sum to n
-  * **<= n/2**, works for both even and odds
-```cpp
-for (int i = 1; i <= n / 2; i++){
-  std::cout << i << "," << n - i << std::endl;
-}
-```
-* TODO: nested loop caution
+* TODO: cool (nested expansion)
 
 &nbsp;
 > ## :notebook: Section 5: C++ Fundamentals
@@ -870,6 +865,13 @@ string str(v.begin(), v.end());
 ```cpp
 vector<int>(s.begin(), s.end());
 ```
+### :star: Classes
+* TODO: template
+* TODO: name shadowing
+
+### :star: Structs
+* TODO: diff between classes and struct
+* TODO: template
 
 ### :star: Correctness Issues
 * variable and function should not have the same name
@@ -965,6 +967,14 @@ if (i == 1) return 1; // not op
 if (i == 0 || i == 1) return i; // ok op
 if (i <= 1) return i; // very op
 ``` 
+* for heap allocated object, such as a new list node, call delete
+```cpp
+Node* n = new Node(0, 2);
+if (n->val == 0){
+  // n no longer useful
+  delete n;
+}
+``` 
 * updating an already existing structure to the max throughout a for loop: can avoid creating a temp and assigning temp to max; modify the structure directly
 ```cpp
 dp[0]; // want to change this to the max
@@ -995,9 +1005,9 @@ int a = 1, b = 2, c = 3, d;
 int a = 1, b = a + 1, c = a + b; // allowed
 ```
 * use +=, -=, *=, /= whenever possible
+* combine common logic (common sub functions -> condense to one general funcion), combine if conditionals as much as possible
 
 ### :star: Clarity Tips
-* class private fields: _fieldNames
 * add temp variable to store expressions if used multiple time/obscure
 
 > ## :notebook: Section 7: Approach/Mindset
@@ -1027,4 +1037,4 @@ Overall Plan:
 * 6/6: can_make_arith, find_dup, flip_bits (3)
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
 * 6/8: longest arith seq, three sum, bsearch, reverse string 1, reverse string 2 (5)
-* 6/12: finish KMP, another KMP problem, string library summary, dp basics review, fib, stairs, stairs with cost, min paths, min cost path 2, integer break
+* 6/12: finish KMP, another KMP problem, string library summary, dp basics review, fib, stairs, stairs with cost, min paths, min paths 2, min cost path 2, integer break
