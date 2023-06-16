@@ -58,12 +58,15 @@
   #### &emsp; 5.16 Others
   #### &emsp; 5.17 Utils
 
-### :notebook: 6. Style
-  #### &emsp; 6.1 Optimization
-  #### &emsp; 6.2 Elegance
-  #### &emsp; 6.3 Clarity
+### :notebook: 6. C++ Advanced Usages
+  #### &emsp; 6.1 std::function
 
-### :notebook: 7. Approach/Mindset
+### :notebook: 7. Style
+  #### &emsp; 7.1 Optimization
+  #### &emsp; 7.2 Elegance
+  #### &emsp; 7.3 Clarity
+
+### :notebook: 8. Approach/Mindset
 
 &nbsp;
 > ## :notebook: Section 1: Data Structures
@@ -1017,9 +1020,64 @@ if (b > a) swap(a, b);
 * array index misalignment
   * eg. if use index i to represent to represent sequence (ith + 1), must access arr using A[seq - 1]
 
+&nbsp;
+> ## :notebook: Section 7: C++ Advanced Usages
+### :star: std::function
+```cpp
+struct Foo{
+    Foo(int num): num_(num) {}
+    void print_add(int i) const {std::cout << num_ + i << '\n';}
+    int num_;
+};
+
+void print_num(int i){
+    std::cout << i << '\n';
+}
+
+struct PrintNum{
+    void operator()(int i) const{
+        std::cout << i << '\n';
+    }
+};
+
+int main() {
+    // store a normal function
+    std::function<void(int)> f_display = print_num;
+    f_display(-9);
+    
+    // storing a lambda
+    std::function<void()> f_display_42 = [](){print_num(42);};
+    f_display_42();
+    
+    // store a call to a member function
+    std::function<void(const Foo&, int)> f_add_display = &Foo::print_add;
+    const Foo foo(314159);
+    f_add_display(foo, 1);
+    f_add_display(359, 1);
+    
+    // store a call to data memebr access
+    std::function<int(Foo const&)> f_num = &Foo::num_;
+    std::cout << "num_:" << f_num(foo) << std::endl;
+    
+    // store a call to a funciton object
+    std::function<void(int)> f_display_obj = PrintNum();
+    f_display_obj(18); 
+    
+    // using function obj in lambda     
+    auto factorial = [](int n){
+        std::function<int(int)> fac = [&](int n){return (n < 2) ? 1 : n * fac(n - 1);};
+        return fac(n);
+    };
+    for (int i{5}; i != 8; ++i){
+        std::cout << i << "! = " << factorial(i) << "; ";
+    }
+    std::cout << '\n';
+    return 0;
+}
+```
 
 &nbsp;
-> ## :notebook: Section 6: Style
+> ## :notebook: Section 7: Style
 ### :star: Optimization Tips
 * raw array faster
 ```cpp
@@ -1107,7 +1165,7 @@ int a = 1, b = a + 1, c = a + b; // allowed
 ### :star: Clarity Tips
 * add temp variable to store expressions if used multiple time/obscure
 
-> ## :notebook: Section 7: Approach/Mindset
+> ## :notebook: Section 8: Approach/Mindset
 1. Time, carefully read question, carefully read test case
   - how does the cases differ?
   - what are the different scenario to consider
