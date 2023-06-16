@@ -60,6 +60,7 @@
 
 ### :notebook: 6. C++ Advanced Usages
   #### &emsp; 6.1 std::function
+  #### &emsp; 6.2 & vs. &&; Copy and Move Constructors
 
 ### :notebook: 7. Style
   #### &emsp; 7.1 Optimization
@@ -585,8 +586,6 @@ int strStr(string haystack, string needle){
 * [Find the Index of First Occurrence in String](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)
 * [Repeated Substring Pattern](https://leetcode.cn/problems/repeated-substring-pattern/)
 
-
-
 &nbsp;
 > ## :notebook: Section 3: Patterns
 
@@ -1075,6 +1074,8 @@ int main() {
     return 0;
 }
 ```
+#### &emsp; 6.2 & vs. &&; Copy and Move Constructors
+* TODO
 
 &nbsp;
 > ## :notebook: Section 7: Style
