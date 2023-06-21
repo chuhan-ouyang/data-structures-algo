@@ -49,6 +49,7 @@
   #### &emsp; 5.7 Stack
   #### &emsp; 5.8 Queue
   #### &emsp; 5.9 Priority Queue
+  #### &emsp; 5.10 Custom Sorting
   #### &emsp; 5.10 Arithmetic
   #### &emsp; 5.11 Bit
   #### &emsp; 5.12 Conversions
@@ -886,6 +887,35 @@ std::cout << (*itr).first << std::endl; // still return smallest elem greater th
 ### :star: Queue Library
 
 ### :star: Priority Queue Library
+
+### :star: Custom Sorting
+* Sort a vector of struct, supplying a bool custom sorting function
+```cpp
+struct Person{
+    int age_;
+    int height_;
+    Person(int age, int height): age_(age), height_(height) {};
+};
+
+bool compare(const Person& a, const Person& b){
+  // return true if a should be sorted in front of b
+    if (a.age_ < b.age_) return true; // resulting in increasingly sorted list
+    return false;
+}
+
+int main() {
+    std::vector<Person> people;
+    people.emplace_back(10, 50);
+    people.emplace_back(20, 60);
+    people.emplace_back(45, 45);
+    std::sort(people.begin(), people.end(), compare);
+    
+    for (int i = 0; i < people.size(); ++i){
+        std::cout << people[i].age_ << std::endl; // 10, 20, 45
+    }
+    return 0;
+}
+```
 
 ### :star: Raw Arrays
 * be careful of initializing int raw arrays: can use 0
