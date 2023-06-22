@@ -58,6 +58,9 @@
   #### &emsp; 5.16 Others
   #### &emsp; 5.17 Utils
 
+### :notebook: 6. Object-Oriented Design
+# TODO: safer to use built-in size then maintaining your own size private variable
+
 ### :notebook: 6. Style
   #### &emsp; 6.1 Optimization
   #### &emsp; 6.2 Elegance
@@ -249,7 +252,49 @@ return dp[w];
 > Problems
 * d  
 
-### :star: Dynamic Programming - Knapsacl: Complete
+### :star: Dynamic Programming - Knapsack: Complete
+> Hint
+* Question statement: "Do fill a bag of weight W with items (given their value and weight), and you can take infinite
+amount of each item needed, what is the maximum value?"
+* Choosing from a range of elements, each adding up to the total contraint, what is the best ways of taking or 
+how many ways are there to take all items?
+> Key
+* 
+> Problems
+* d  
+```cpp
+
+// first traverse items, then traverse the knapsack: yielding a combination (think coin change II)
+int testCompletePack(){
+  std::vector<int> weight = {1, 3, 4};
+  std::vector<int> value = {15, 20, 30};
+  int totalWeight = 4;
+  std::vector<int> dp(totalWeight + 1, 0);
+
+  for (int i = 0; i < weight.size(); ++i){
+    for (int j = weight[i]; j <= dp.size(); ++j){
+      dp[j] = std::max(dp[j], dp[j - weight[i]] + value[i]);
+    }
+  }
+  return dp[totalWeight];
+}
+
+// first traverse knapsack, then traverse the items: yielding a permutation (think combination sum IV)
+int testCompletePack(){
+  std::vector<int> weight = {1, 3, 4};
+  std::vector<int> value = {15, 20, 30};
+  int totalWeight = 4;
+  std::vector<int> dp(totalWeight + 1, 0);
+
+  for (int i = 0; i < dp.size(); ++i){
+    for (int j = 0; i < weight.size(); ++i){
+      if (i - weight[j] >= 0) dp[j] = std::max(dp[j], dp[j - weight[i]] + value[i]);
+    }
+  }
+  return dp[totalWeight];
+}
+```
+
 
 ### :star: Greedy
 > Hint
@@ -878,6 +923,7 @@ std::cout << (*itr).first << std::endl; // 3 is found
 itr = m.upper_bound(3);
 std::cout << (*itr).first << std::endl; // still return smallest elem greater than 3
 ```
+* TODO: get the first kv pair
 
 ### :star: Stack Library
 
@@ -1135,3 +1181,7 @@ Overall Plan:
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
 * 6/8: longest arith seq, three sum, bsearch, reverse string 1, reverse string 2 (5)
 * 6/12: finish KMP, another KMP problem, string library summary, dp basics review, fib, stairs, stairs with cost, min paths, min paths 2, min cost path 2, integer break
+* 6/16: daily, design, LFU cache:heavy_check_mark:, Partition Equal Subset Sum:heavy_check_mark:, Last Stone Weight II, Target Sum*, ONes and Zeroes, Coin Change II*, Combination Sum IV, Climbing Stairs*, Coin Change*, Perfect Squares, Word Break
+* 6/20: Time needed to inform all employees, Ones and Zeroes, Coin Change II
+* 6/22: Daily, Design, Coin Change II, Combination Sum IV, Climbing Stairs, Coin Change, Perfect Squares, Work Break,
+House Robber I, House Robber II, House Robber III
