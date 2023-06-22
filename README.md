@@ -49,6 +49,7 @@
   #### &emsp; 5.7 Stack
   #### &emsp; 5.8 Queue
   #### &emsp; 5.9 Priority Queue
+  #### &emsp; 5.10 Custom Sorting
   #### &emsp; 5.10 Arithmetic
   #### &emsp; 5.11 Bit
   #### &emsp; 5.12 Conversions
@@ -61,12 +62,16 @@
 ### :notebook: 6. Object-Oriented Design
 # TODO: safer to use built-in size then maintaining your own size private variable
 
-### :notebook: 6. Style
-  #### &emsp; 6.1 Optimization
-  #### &emsp; 6.2 Elegance
-  #### &emsp; 6.3 Clarity
+### :notebook: 6. C++ Advanced Usages
+  #### &emsp; 6.1 std::function
+  #### &emsp; 6.2 & vs. &&; Copy and Move Constructors
 
-### :notebook: 7. Approach/Mindset
+### :notebook: 7. Style
+  #### &emsp; 7.1 Optimization
+  #### &emsp; 7.2 Elegance
+  #### &emsp; 7.3 Clarity
+
+### :notebook: 8. Approach/Mindset
 
 &nbsp;
 > ## :notebook: Section 1: Data Structures
@@ -627,8 +632,6 @@ int strStr(string haystack, string needle){
 * [Find the Index of First Occurrence in String](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)
 * [Repeated Substring Pattern](https://leetcode.cn/problems/repeated-substring-pattern/)
 
-
-
 &nbsp;
 > ## :notebook: Section 3: Patterns
 
@@ -931,6 +934,35 @@ std::cout << (*itr).first << std::endl; // still return smallest elem greater th
 
 ### :star: Priority Queue Library
 
+### :star: Custom Sorting
+* Sort a vector of struct, supplying a bool custom sorting function
+```cpp
+struct Person{
+    int age_;
+    int height_;
+    Person(int age, int height): age_(age), height_(height) {};
+};
+
+bool compare(const Person& a, const Person& b){
+  // return true if a should be sorted in front of b
+    if (a.age_ < b.age_) return true; // resulting in increasingly sorted list
+    return false;
+}
+
+int main() {
+    std::vector<Person> people;
+    people.emplace_back(10, 50);
+    people.emplace_back(20, 60);
+    people.emplace_back(45, 45);
+    std::sort(people.begin(), people.end(), compare);
+    
+    for (int i = 0; i < people.size(); ++i){
+        std::cout << people[i].age_ << std::endl; // 10, 20, 45
+    }
+    return 0;
+}
+```
+
 ### :star: Raw Arrays
 * be careful of initializing int raw arrays: can use 0
 ```cpp
@@ -1063,9 +1095,66 @@ if (b > a) swap(a, b);
 * array index misalignment
   * eg. if use index i to represent to represent sequence (ith + 1), must access arr using A[seq - 1]
 
+&nbsp;
+> ## :notebook: Section 7: C++ Advanced Usages
+### :star: std::function
+```cpp
+struct Foo{
+    Foo(int num): num_(num) {}
+    void print_add(int i) const {std::cout << num_ + i << '\n';}
+    int num_;
+};
+
+void print_num(int i){
+    std::cout << i << '\n';
+}
+
+struct PrintNum{
+    void operator()(int i) const{
+        std::cout << i << '\n';
+    }
+};
+
+int main() {
+    // store a normal function
+    std::function<void(int)> f_display = print_num;
+    f_display(-9);
+    
+    // storing a lambda
+    std::function<void()> f_display_42 = [](){print_num(42);};
+    f_display_42();
+    
+    // store a call to a member function
+    std::function<void(const Foo&, int)> f_add_display = &Foo::print_add;
+    const Foo foo(314159);
+    f_add_display(foo, 1);
+    f_add_display(359, 1);
+    
+    // store a call to data memebr access
+    std::function<int(Foo const&)> f_num = &Foo::num_;
+    std::cout << "num_:" << f_num(foo) << std::endl;
+    
+    // store a call to a funciton object
+    std::function<void(int)> f_display_obj = PrintNum();
+    f_display_obj(18); 
+    
+    // using function obj in lambda     
+    auto factorial = [](int n){
+        std::function<int(int)> fac = [&](int n){return (n < 2) ? 1 : n * fac(n - 1);};
+        return fac(n);
+    };
+    for (int i{5}; i != 8; ++i){
+        std::cout << i << "! = " << factorial(i) << "; ";
+    }
+    std::cout << '\n';
+    return 0;
+}
+```
+#### &emsp; 6.2 & vs. &&; Copy and Move Constructors
+* TODO
 
 &nbsp;
-> ## :notebook: Section 6: Style
+> ## :notebook: Section 7: Style
 ### :star: Optimization Tips
 * raw array faster
 ```cpp
@@ -1153,7 +1242,7 @@ int a = 1, b = a + 1, c = a + b; // allowed
 ### :star: Clarity Tips
 * add temp variable to store expressions if used multiple time/obscure
 
-> ## :notebook: Section 7: Approach/Mindset
+> ## :notebook: Section 8: Approach/Mindset
 1. Time, carefully read question, carefully read test case
   - how does the cases differ?
   - what are the different scenario to consider
@@ -1181,7 +1270,3 @@ Overall Plan:
 * 6/7: common, intersection, happy num, two sum, four sum, ransom, count neg (7)
 * 6/8: longest arith seq, three sum, bsearch, reverse string 1, reverse string 2 (5)
 * 6/12: finish KMP, another KMP problem, string library summary, dp basics review, fib, stairs, stairs with cost, min paths, min paths 2, min cost path 2, integer break
-* 6/16: daily, design, LFU cache:heavy_check_mark:, Partition Equal Subset Sum:heavy_check_mark:, Last Stone Weight II, Target Sum*, ONes and Zeroes, Coin Change II*, Combination Sum IV, Climbing Stairs*, Coin Change*, Perfect Squares, Word Break
-* 6/20: Time needed to inform all employees, Ones and Zeroes, Coin Change II
-* 6/22: Daily, Design, Coin Change II, Combination Sum IV, Climbing Stairs, Coin Change, Perfect Squares, Work Break,
-House Robber I, House Robber II, House Robber III
