@@ -264,20 +264,32 @@ amount of each item needed, what is the maximum value?"
 * Choosing from a range of elements, each adding up to the total contraint, what is the best ways of taking or 
 how many ways are there to take all items?
 > Key
-* 
+* Overall knapsack: general formula is 
+```cpp
+// max value you can achieve by  having i items with weight limit 
+dp[i][j]  = max(dp[i - 1][j], dp[i][j - weight[i]])
+```
+* By also reading from the current ith row, you allow the ith item to be included multiple times to add up to the final weight
+* If asking for total number of ways:
+```cpp
+dp[currWeight] += dp[currWeight - weightDiff];
+```
 > Problems
 * d  
 ```cpp
 
 // first traverse items, then traverse the knapsack: yielding a combination (think coin change II)
 int testCompletePack(){
+  // space efficient solution
+
   std::vector<int> weight = {1, 3, 4};
   std::vector<int> value = {15, 20, 30};
   int totalWeight = 4;
-  std::vector<int> dp(totalWeight + 1, 0);
+  std::vector<int> dp(totalWeight + 1, 0); // covers 0 -> amt
 
   for (int i = 0; i < weight.size(); ++i){
-    for (int j = weight[i]; j <= dp.size(); ++j){
+    // note j starts from weight[i]
+    for (int j = weight[i]; j < dp.size(); ++j){ // traverse from start to end to allow complete knapsack
       dp[j] = std::max(dp[j], dp[j - weight[i]] + value[i]);
     }
   }
@@ -289,11 +301,12 @@ int testCompletePack(){
   std::vector<int> weight = {1, 3, 4};
   std::vector<int> value = {15, 20, 30};
   int totalWeight = 4;
-  std::vector<int> dp(totalWeight + 1, 0);
+  std::vector<int> dp(totalWeight + 1, 0); // covers 0 -> amt
 
   for (int i = 0; i < dp.size(); ++i){
-    for (int j = 0; i < weight.size(); ++i){
-      if (i - weight[j] >= 0) dp[j] = std::max(dp[j], dp[j - weight[i]] + value[i]);
+    for (int j = 0; j < weight.size(); ++j){
+      // enforced bounds check
+      if (i - weight[j] >= 0) dp[i] = std::max(dp[i], dp[i - weight[j]] + value[j]);
     }
   }
   return dp[totalWeight];
@@ -734,6 +747,8 @@ for (int i = 0; i < v.size(); i++){
 ### :star: For/While Precise Control
 * replace for loop
 * TODO: cool (nested expansion)
+* double for loop
+  * please make sure you don't mistmatch indices
 
 &nbsp;
 > ## :notebook: Section 5: C++ Fundamentals
