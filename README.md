@@ -1286,4 +1286,5 @@ Overall Plan:
 * 6/8: longest arith seq, three sum, bsearch, reverse string 1, reverse string 2 (5)
 * 6/12: finish KMP, another KMP problem, string library summary, dp basics review, fib, stairs, stairs with cost, min paths, min paths 2, min cost path 2, integer break
 * 6/24： https://leetcode.com/problems/climbing-stairs/submissions/978648496/
-* https://leetcode.com/problems/coin-change/submissions/978668660/
+* https://leetcode.com/problems/coin-change/submissions/978668660/,
+https://leetcode.com/problems/perfect-squares/submissions/978689947/,
