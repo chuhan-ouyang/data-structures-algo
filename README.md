@@ -18,10 +18,13 @@
   #### &emsp; 2.6 Tree(:star:)  
   #### &emsp; 2.7 Sorting(:star:)
   #### &emsp; 2.8 Searching(:star:)
+  #### &emsp; 2.9 Hashing/Storage(:star:)
   #### &emsp; 2.9 Prefix Sum(:star:)
   #### &emsp; 2.10 Sliding Window(:star::star:)
   #### &emsp; 2.11 Two Pointers (Same Direction, Opposite Direction)(:star::star:)
   #### &emsp; 2.12 KMP
+  #### &emsp; 2.13 Simulation
+
 
 
 ### :notebook: 3. Patterns
@@ -335,8 +338,12 @@ int testCompletePack(){
   return dp[n - 1][1];
 ```
 > Problems
-* []()
-* []()
+* [Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/979484806/)
+* [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/submissions/979542712/)
+* [Best Time to Buy and Sell Stock IV](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-iv/submissions/979593047/)
+* [Best Time to Buy and Sell Stock with Cooldown](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/submissions/979608881/)
+* [Best Time to Buy and Sell Stock with Transaction Fee](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/submissions/979613028/)
+* 
 
 ### :star: Dynamic Programming - Subsequence
 > Hint
@@ -347,10 +354,20 @@ int testCompletePack(){
 * Stressing the "must ending" becuase provides insight to future states that may extend on this subsquence
 * Recurrence: look at previous state to see if you can extend, and choose the best extension
 ```cpp
+std::vector<int> dp(n, 1); // usually 1D or 2D dp the same dimension as the arrays
+int res = 0;
+for (int i = 1; i < n; ++i){
+  if (c){ // some condition for nums[i] be a part of a previous subsequence, extending it
+    dp[i] = dp[j] + 1;
+    res = std::max(res, dp[i]); // update longest sequence count
+  }
+}
+return res;
 ```
 > Problems
-* []()
-* []()
+* [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/submissions/979642648/)
+* [Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/submissions/979696983/)
+* [Maximum Length of Repeated Subarray](https://leetcode.com/problems/maximum-length-of-repeated-subarray/submissions/979732680/)
 
 ### :star: Greedy
 > Hint
@@ -683,6 +700,15 @@ int strStr(string haystack, string needle){
 * [Find the Index of First Occurrence in String](https://leetcode.cn/problems/find-the-index-of-the-first-occurrence-in-a-string/)
 * [Repeated Substring Pattern](https://leetcode.cn/problems/repeated-substring-pattern/)
 
+### :star: Simulation
+> Hint
+* Follow procedure
+> Key
+* Think about data structure, what to track
+* For loop precise control, can use two pointers, to control iteratoins
+> Problems
+* [Total Cost to Hire K Workers](https://leetcode.com/problems/total-cost-to-hire-k-workers/submissions/979780193/)
+
 &nbsp;
 > ## :notebook: Section 3: Patterns
 
@@ -931,10 +957,32 @@ v = vector<int>(10, 0); // ok
 vector<int> v;
 v.back();
 ```
-* lower_bound(k) return the first element at or greater than k, and upper_bound(k) return first element strictly greataer than k
+* user lower_bound() and upper_bound() to get the iterator to first element greater/equals to k in a increasingly sorted vector, and get the iterator to the first element smaller/equals to k in a decreasingly sorted vector 
 ```cpp
-vector<int> v;
-v.back();
+std::vector<int> notSorted{1, 5, 6, 7, 9, 3, 4}; 
+  sort(notSorted.begin(), notSorted.end()); // 1, 3, 4, 5, 6, 7, 9
+  // increasingly sorted
+  auto itr = lower_bound(notSorted.begin(), notSorted.end(), 5);
+  if (itr != notSorted.end()){
+      std::cout << "first element greater/equals to 5 at index: " << itr - notSorted.begin() << std::endl;
+  }
+  
+  itr = upper_bound(notSorted.begin(), notSorted.end(), 5);
+  if (itr != notSorted.end()){
+      std::cout << "first element strictly greater than 5 at index: " << itr - notSorted.begin() << std::endl;
+  }
+  
+  std::vector<int> dec{9, 8, 7, 6, 5, 4, 3, 2, 1}; 
+  // decreasingly sorted
+  itr = lower_bound(dec.begin(), dec.end(), 5, std::greater<int>());
+  if (itr != dec.end()){
+      std::cout << "first element at or at or smaller than 5 at number: " << *itr << std::endl;
+  }
+  
+  itr = upper_bound(dec.begin(), dec.end(), 5, std::greater<int>());
+  if (itr != dec.end()){
+      std::cout << "first element strictly smaller than 5 at number: " << *itr << std::endl;
+  }
 ```
 
 ### :star: Hashset(Unordered_Set) Library
@@ -959,10 +1007,35 @@ string s = "abcde";
 ```
 * good for strange keys like vector<int>, or pair<int, int>
 ```cpp
-unordered_set<vector<int>> s; // illegal!
-set<vector<int>> s; // ok
+std::unordered_set<vector<int>> s; // illegal!
+std::set<vector<int>> s; // ok
 ```
 * s.insert(elem), s.erase(elem)
+* use lower_bound(k)/upper_bound(k) to get an iterator to the first element greater/equals to k in increasingly sorted set, and get an iterator to the first element smaller/equasl to k in decreasingly sorted set
+```cpp
+std::set<int> s{1, 5, 6, 9, 3, 4};
+auto itr1 = s.lower_bound(5);
+if (itr1 != s.end()){
+    std::cout << "first element greater/equals to 5 at number: " << *itr1 << std::endl;
+}
+
+itr1 = s.upper_bound(5);
+if (itr1 != s.end()){
+    std::cout << "first element strictly greater than 5 at number: " << *itr1 << std::endl;
+}
+
+std::set<int, std::greater<int>> s1{1, 5, 6, 9, 3, 4}; // 9 6 5 4 3
+itr1 = s1.lower_bound(5);
+if (itr1 != s1.end()){ 
+    std::cout << "first element smaller/equals to 5 at number: " << *itr1 << std::endl;
+}
+
+
+itr1 = s1.upper_bound(5);
+if (itr1 != s1.end()){
+    std::cout << "first element strictly smaller than 5 at number: " << *itr1 << std::endl;
+}
+```
 
 ### :star: Map Library (Red-Black Tree)
 * good for strange keys like vector<int>, or pair<int, int>
@@ -995,6 +1068,41 @@ std::cout << (*itr).first << std::endl; // still return smallest elem greater th
 ### :star: Queue Library
 
 ### :star: Priority Queue Library
+* Default is max heap, elements come in decreasing order
+* To get min heap, user greater<int> comparator
+```cpp
+std::priority_queue<int, std::vector<int>, std::greater<int>> pq;
+```
+* pq.top() returns reference not iterator/ptr
+* pq.pop(), pq.push()
+* use !pq.empty() to test for existence, instead of pq
+* Priority queue of pairs, choose increasingly/decreasingly sorted
+```cpp
+// pq sorted increasingly based on first element, then increasingly based on second
+std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, std::greater<std::pair<int, int>>> pq;
+pq.push({1, 2});
+pq.push({1, 3});
+pq.push({1, 5});
+pq.push({2,4});
+
+while (!pq.empty()){
+    std::cout << pq.top().first << ": " << pq.top().second << std::endl;
+    pq.pop();
+}
+
+// pq sorted decreasingly based on first element, then decreasingly based on second
+std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>> pq1;
+pq1.push({1, 2});
+pq1.push({1, 3});
+pq1.push({1, 5});
+pq1.push({2,4});
+
+while (!pq1.empty()){
+    std::cout << pq1.top().first << ": " << pq1.top().second << std::endl;
+    pq1.pop();
+}
+```
+  
 
 ### :star: Custom Sorting
 * Sort a vector of struct, supplying a bool custom sorting function
