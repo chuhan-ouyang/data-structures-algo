@@ -1446,6 +1446,6 @@ https://leetcode.com/problems/perfect-squares/submissions/978689947/,
 https://leetcode.com/problems/word-break/submissions/,
 https://leetcode.com/problems/house-robber/submissions/,
 https://leetcode.com/problems/house-robber-ii/submissions/978759578/,
-* 6/26: [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/submissions/980259197/), [Uncrossed Lines](https://leetcode.com/problems/uncrossed-lines/submissions/980316448/), [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/submissions/980327708/), 
+* 6/26: [Longest Common Subsequence](https://leetcode.com/problems/longest-common-subsequence/submissions/980259197/), [Uncrossed Lines](https://leetcode.com/problems/uncrossed-lines/submissions/980316448/), [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/submissions/980327708/), [Is Subsequence](https://leetcode.com/problems/is-subsequence/submissions/980349172/)
 
 
