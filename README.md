@@ -148,6 +148,7 @@ Just Think: Do I need to rely on previous states?
 4. Decide the order of traversal (must align with init and recurrence formula, no out of bounds/uninitialized array access)
 5. Test the above by filling an example DP
 6. Always print the array for debugging
+A good idea may be to collapse a dimension, turning 3D into 2D by making one dimension n times bigger, should always keep 2d dp structure
 > Code 
 ```cpp
 // edge cases
@@ -312,7 +313,44 @@ int testCompletePack(){
   return dp[totalWeight];
 }
 ```
+### :star: Dynamic Programming - Stocks
+> Hint
+* Rely on some or all of previous states
+  Buy Sell Cooldown
+> Key
+* Decide what state mea and decide recurrence
+* Example: Hold and No Hold state 
+  * dp[0] = hold (bought today or prevoiusly and didn't sell yet)
+  * dp[1] = not hold (never bought/sold today/sold previously and didn't buy new yet)
+* To ensure that you must sell before you buy next, dp[0][i] can only retain from dp[0][i - 1] or take actions on dp[1][i - 1], where something is sold (not hold)
+* To ensure you sell after you buy something, dp[1][i] retain from do[1][i - 1] or take actions on dp[0][i - 1], where you hold in the previou state
+```cpp
+  dp[0][0] -= prices[0];
+  dp[0][1] = 0;
+  for (int i = 1; i < n; ++i){
+      // common recurrence
+      dp[i][0] = std::max(dp[i - 1][0], dp[i - 1][1] - prices[i]);
+      dp[i][1] = std::max(dp[i - 1][1], prices[i] + dp[i - 1][0]);
+  }
+  return dp[n - 1][1];
+```
+> Problems
+* []()
+* []()
 
+### :star: Dynamic Programming - Subsequence
+> Hint
+* Find longest subsequence (continuous/not continuous) of an array satisfying some conditoin
+> Key
+* Decide when can you extend the previous subsequence to get to new one
+* dp[i] often represents the lognest subsequence **ending** in i
+* Stressing the "must ending" becuase provides insight to future states that may extend on this subsquence
+* Recurrence: look at previous state to see if you can extend, and choose the best extension
+```cpp
+```
+> Problems
+* []()
+* []()
 
 ### :star: Greedy
 > Hint
@@ -888,7 +926,16 @@ v = vector<int>(10, 0); // ok
     * directly takes constructor argument
     * avoids constructing/destructing temporary object
     * very efficient when inserting large amount of objects or each object is time-consuing to create/destroy
-
+* easy to get last element
+```cpp
+vector<int> v;
+v.back();
+```
+* lower_bound(k) return the first element at or greater than k, and upper_bound(k) return first element strictly greataer than k
+```cpp
+vector<int> v;
+v.back();
+```
 
 ### :star: Hashset(Unordered_Set) Library
 * iterate through hashset
