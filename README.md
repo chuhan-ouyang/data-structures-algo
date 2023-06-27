@@ -347,13 +347,20 @@ int testCompletePack(){
 
 ### :star: Dynamic Programming - Subsequence
 > Hint
-* Find longest subsequence (continuous/not continuous) of an array satisfying some conditoin
+* Find longest subsequence (continuous/not continuous) of an array satisfying some condition
+* Find common (or other condition) subsequence between two structures
 > Key
 * Decide when can you extend the previous subsequence to get to new one
 * dp[i] often represents the lognest subsequence **ending** in i
 * Stressing the "must ending" becuase provides insight to future states that may extend on this subsquence
 * Recurrence: look at previous state to see if you can extend, and choose the best extension
+* It is also common to have a 2D array when looking at subsequences between two structures 
+  * dp[i][j] represents the best subsequence formed by [0, i - 1] substring of the frist and the [0, j - 1] substring of the second string. 
+  * The intuition is that by looping across all n * m possibilities, you actually cover all possible matching between two chracters and "+ 1" whenever appropriate, building up upon previous states
+* For these subsequecne quesion, usually the meaning of the dp[i][j] cell is the same meaning as the what question is asking for
+* Think about how to propagate, and whether to read from dp[i - 1][j], dp[i][j - 1], or dp[i - 1][j - 1]
 ```cpp
+// 1D version to test for "extension"
 std::vector<int> dp(n, 1); // usually 1D or 2D dp the same dimension as the arrays
 int res = 0;
 for (int i = 1; i < n; ++i){
@@ -363,11 +370,31 @@ for (int i = 1; i < n; ++i){
   }
 }
 return res;
+
+// 2D version to test for extension
+std::vector<std::vector<int>> dp(n + 1, std::vector<int>(m + 1, 0)); // size is (n + 1) * (m + 1)
+// dp[i][j] represents the best subsequence formed by [0, i - 1] substring of the frist and the [0, j - 1] substring of the second string
+// need to decide whether dp[i][j] means must END the sequence at exactly i - 1, j - 1, or just contains it
+for (int i = 0; i < m; ++i) dp[0][i] = i; // init first row -> prep for dp[1][i]
+for (int i = 0; i < n; ++i) dp[i][0] = i; // init first col -> prep for dp[1][i]
+for (int i = 1; i <= n; ++i){ // loop from 1 UP to n
+  for (int j = 1; j <= m; ++j){ // loop from 1 UP to m
+    dp[i][j] = std::max(dp[i][j - 1], std::max(dp[i - 1][j], dp[i - 1][j - 1])); // recurrence
+    if (s1[i - 1] == s2[j - 1]){ // read from i - 1 not i, j - 1, not j
+      dp[i][j] = dp[i - 1][j - 1]; // available for extension, usually read diagonally
+    }
+  }
+}
+// note the 1-off nature
+// i's row represents index i - 1 and j's col represents index j - 1
+return dp[n][m];
+
 ```
 > Problems
 * [Longest Increasing Subsequence](https://leetcode.com/problems/longest-increasing-subsequence/submissions/979642648/)
 * [Longest Continuous Increasing Subsequence](https://leetcode.com/problems/longest-continuous-increasing-subsequence/submissions/979696983/)
 * [Maximum Length of Repeated Subarray](https://leetcode.com/problems/maximum-length-of-repeated-subarray/submissions/979732680/)
+* [Maximum Subarray](https://leetcode.com/problems/maximum-subarray/submissions/980327708/)
 
 ### :star: Greedy
 > Hint
@@ -1102,6 +1129,40 @@ while (!pq1.empty()){
     pq1.pop();
 }
 ```
+* Priority queue of pairs with custom sorting
+  * Use lambda sorting for style
+  * Lambda allows you to capture by reference (be careful of changing refs though) so you don't need to pass in extra global data or store it as a field in a struct
+  * For pqs, there is the "reverse" nuanced in sorting order
+```cpp
+std::vector<int> nums1{1, 2, 5, 4, 6};
+std::vector<int> nums2{6, 3, 12, 4, 6};
+
+// always preferrable to specify the sorting function using lambda rather than declaring another struct
+// can apply sorting function on pairs/customly defined struct 
+// easier to operate just on paris instead of defining something else
+auto cmp = [&](const std::pair<int, int>& a, const std::pair<int, int>& b){
+    // if (condition that a is BEHIND b) {return true}
+    // create min heap based on sum in the vector, then sort increasingly based on first index
+    int sum1 = nums1[a.first] + nums2[a.second], sum2 = nums1[b.first] + nums2[b.second];
+    if (sum1 > sum2){
+        return true;
+    } else if (sum1 == sum2){
+        return a.first > b.first;
+    } else{
+        return false;
+    }
+};
+
+std::priority_queue<std::pair<int, int>, std::vector<std::pair<int, int>>, decltype(cmp)> pq(cmp);
+for (int i = 0; i < nums1.size(); ++i){
+    pq.push({i, nums1.size() - i});
+}
+while (!pq.empty()){
+    auto top = pq.top();
+    pq.pop();
+    std::cout << top.first << " : " << top.second << std::endl;
+}
+```
   
 
 ### :star: Custom Sorting
@@ -1256,8 +1317,32 @@ while (x){ // illegal way to specify keep going as long as x > 0
 if (b > a) swap(a, b);
 ```
 * covering range [-n, n] need (2n + 1) elements
+* min can only twake 2 args!
+* check what you are indexing into
+* must add ; after lambda, or the inner def of the lambda code inside {}, struct, class def, but definitely not function defs
 * array index misalignment
   * eg. if use index i to represent to represent sequence (ith + 1), must access arr using A[seq - 1]
+* special types, with **uint64_t** being the largest possible type
+```cpp
+
+int8_t a;     // signed integer 8 bits
+int16_t b;    // signed integer 16 bits
+
+// range: -2^31 - (2^31 - 1)
+int32_t c;    // signed integer 32 bits, this is the int type we know (4 bytes, signed)
+
+// range: -2^63 - (2^63 - 1)
+int64_t d;    // signed integer 64 bits, useful to get double the size of traditional int
+
+uint8_t a;    // unsigned integer 8 bits
+uint16_t b;   // unsigned integer 16 bits
+
+// range: 0 - (2^32 - 1)
+uint32_t c;   // unsigned integer 32 bits
+
+// range: 0 - (2^64 - 1) .... the largest 
+uint64_t d;   // unsigned integer 64 bits, useful for all pos numbers, get >2x the size of trad int
+```
 
 ### :star: Utils
 * print vector (1D/2D)
