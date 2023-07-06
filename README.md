@@ -1,4 +1,4 @@
-# :pencil: Data Structures and Algorithms, C++ Fundamentals
+# :pencil: Data Structures and Algorithms, C++ Fundamentals and Advanced Techniques
 
 ### :notebook: 1. Data Structures
   #### &emsp; 1.1 Linked List 
